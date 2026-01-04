@@ -9,7 +9,7 @@ const Page: React.FC = () => {
     {
       icon: <GraduationCap className="w-7 h-7 text-white" />,
       cssId: "Inspire",
-      title: "Inspire Softech Solutions",
+      title: "Inspire Softech",
       tagline: "Empowering Minds through Training, Internships & Skill Development.",
       color: "amber",
       description:
