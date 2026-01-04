@@ -6,11 +6,13 @@ import Footer from '../../components/Footer';
 
 const ConferencePage = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      
-      {/* --- HERO SECTION --- */}
-      <div className="relative bg-slate-900 text-white pt-32 pb-20 px-6">
+    <div className="min-h-screen bg-white bg-cover bg-center bg-fixed relative" style={{ backgroundImage: "url('/images/conference-bg.jpg')" }}>
+      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+      <div className="relative z-10">
+        <Navbar />
+
+        {/* --- HERO SECTION --- */}
+        <div className="relative text-white pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <span className="inline-block py-1 px-3 rounded-full bg-amber-500/20 text-amber-400 text-sm font-semibold mb-6 border border-amber-500/30">
             GC³I² – 2026
@@ -37,7 +39,7 @@ const ConferencePage = () => {
       </div>
 
       {/* --- ABOUT SECTION --- */}
-      <div className="py-16 px-6 max-w-6xl mx-auto">
+      <div className="py-16 px-6 max-w-6xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold text-slate-900 mb-6">About the <span className="text-amber-600">Conference</span></h2>
@@ -85,9 +87,9 @@ const ConferencePage = () => {
       </div>
 
       {/* --- TRACKS --- */}
-      <div className="bg-slate-50 py-16 px-6">
+      <div className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Conference <span className="text-amber-600">Tracks</span></h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-12">Conference <span className="text-amber-600">Tracks</span></h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
               "Artificial Intelligence & Intelligent Systems",
@@ -112,11 +114,13 @@ const ConferencePage = () => {
       {/* --- AWARDS SECTION --- */}
       <div className="py-16 px-6 max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-amber-600 font-semibold tracking-wider uppercase text-sm">Recognition</span>
-          <h2 className="text-3xl font-bold text-slate-900 mt-2">Global Excellence Awards 2026</h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Hosted by Edinz Tech Private Limited, recognizing outstanding individuals and organizations.
-          </p>
+          <div className="inline-block bg-slate-900 text-white px-8 py-6 rounded-2xl shadow-md">
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-sm">Recognition</span>
+            <h2 className="text-3xl font-bold mt-2">Global Excellence Awards 2026</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-sm text-slate-200">
+              Hosted by Edinz Tech Private Limited, recognizing outstanding individuals and organizations.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -193,6 +197,7 @@ const ConferencePage = () => {
       </div>
 
       <Footer />
+      </div>
     </div>
   );
 };
