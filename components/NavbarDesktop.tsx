@@ -144,9 +144,9 @@ const NavbarDesktop: React.FC<Props> = ({ links }) => {
     return (
         <nav
             ref={navRef}
-            className={` rounded-4xl md:flex items-center justify-between bg-gray-900 px-6 py-4 shadow-md sticky top-0 z-50 transition-all duration-500 ${scrolled
-                ? "bg-gray-900/70 backdrop-blur-sm shadow-xl scale-[0.80] w-[60vw] hover:scale-85"
-                : "bg-gray-900 w-[97vw]"
+                className={` rounded-4xl md:flex items-center justify-between bg-gray-900 px-6 py-4 shadow-md sticky top-0 z-50 transition-all duration-500 ${scrolled
+                ? "bg-gray-900/70 backdrop-blur-sm shadow-xl scale-[0.85] w-[85vw] hover:scale-[0.9]" // Increased to 85% width
+                : "bg-gray-900 w-full" // Increased to full width (optional)
                 }`}
         >
             {/* Logo */}
