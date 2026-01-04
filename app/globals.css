@@ -1,0 +1,64 @@
+@import "tailwindcss";
+/* Color + font variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* next/font will inject these custom properties when the className/variable
+     from the font is present on the document root (see layout.tsx) */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-raleway: var(--font-raleway);
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Base body styles */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+
+  /* prefer Raleway (variable we set), fall back to system sans */
+  font-family: var(--font-raleway), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.scaleAnimation {
+  transition: transform 0.2s ease-in-out;
+}
+
+.scaleAnimation:hover {
+  transform: scale(1.1);
+}
+
+/* Custom text selection style */
+::selection {
+  background-color: #f59e0b; /* Amber-500 */
+  color: #ffffff; /* White text */
+}
+
+/* For better browser support (Firefox) */
+::-moz-selection {
+  background-color: #f59e0b;
+  color: #ffffff;
+ 
+}
