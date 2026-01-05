@@ -12,8 +12,9 @@ const ConferencePage = () => {
         <Navbar />
 
         {/* --- HERO SECTION --- */}
-        <div className="relative text-white pt-32 pb-20 px-6">
+        <div className="relative text-white pt-28 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-4 text-sm text-gray-200">INSPIRE Softech Solutions (TN Registered | ISO 9001:2015 Certified | AICTE-Associated Organization)</div>
           <span className="inline-block py-1 px-3 rounded-full bg-amber-500/20 text-amber-400 text-sm font-semibold mb-6 border border-amber-500/30">
             GC³I² – 2026
           </span>
@@ -32,9 +33,21 @@ const ConferencePage = () => {
             </div>
             <div className="flex items-center justify-center gap-2 bg-white/10 px-5 py-3 rounded-lg backdrop-blur-sm">
               <MapPin className="w-5 h-5 text-amber-500" />
-              <span>Olympia Tech Park, Chennai (Hybrid)</span>
+              <span>Olympia Technology Park Auditorium, Guindy, Chennai, India (Hybrid)</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* --- PUBLICATION OPPORTUNITIES --- */}
+      <div className="py-12 px-6">
+        <div className="max-w-6xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl p-8">
+          <h3 className="text-2xl font-bold text-slate-900 mb-4">Publication Opportunities</h3>
+          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+            <li>All submitted papers will undergo a rigorous peer-review process.</li>
+            <li>Accepted and presented papers will be included in the Conference Proceedings with ISBN.</li>
+            <li>Selected high-quality papers will be recommended for publication in peer-reviewed and indexed journals or edited book chapters, subject to journal policies and author consent.</li>
+          </ul>
         </div>
       </div>
 
@@ -124,11 +137,12 @@ const ConferencePage = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AwardCategory title="Academic & Research" items={["Best Academician", "Best Researcher", "Young Researcher Award", "Teaching Excellence"]} />
-          <AwardCategory title="Industry & Corporate" items={["Industry Leader of the Year", "Innovation Leader", "Corporate Excellence", "Digital Transformation"]} />
-          <AwardCategory title="Healthcare & Medical" items={["Medical Professional of Year", "Healthcare Services", "MedTech Innovation", "Community Healthcare"]} />
-          <AwardCategory title="Technology" items={["Tech Innovator", "AI Excellence", "Best Startup", "Product Development"]} />
-          <AwardCategory title="Social Impact" items={["Social Impact Excellence", "Women Leadership", "Young Achiever", "Community Development"]} />
+          <AwardCategory title="Academic & Research Excellence" items={["Best Academician of the Year","Best Researcher of the Year","Young Researcher Award","Excellence in Teaching & Learning","Outstanding Contribution to Research"]} />
+          <AwardCategory title="Industry & Corporate Excellence" items={["Industry Leader of the Year","Excellence in Corporate Leadership","Innovation Leader Award","Outstanding Industry Professional","Excellence in Digital Transformation"]} />
+          <AwardCategory title="Healthcare & Medical Excellence" items={["Medical Professional of the Year","Excellence in Healthcare Services","Innovation in Medical Technology","Excellence in Community Healthcare"]} />
+          <AwardCategory title="Technology & Innovation" items={["Technology Innovator of the Year","Excellence in Artificial Intelligence & Emerging Technologies","Best Startup / Entrepreneurial Innovation","Excellence in Product / Solution Development"]} />
+          <AwardCategory title="Education, Training & Skill Development" items={["Excellence in Skill Development & Training","Outstanding Training Organisation","Excellence in Industry-Oriented Education","Mentor of the Year"]} />
+          <AwardCategory title="Social Impact & Leadership" items={["Excellence in Social Impact","Women Leadership Excellence Award","Young Achiever Award","Excellence in Community Development"]} />
         </div>
         
         <div className="mt-10 text-center">
@@ -192,6 +206,10 @@ const ConferencePage = () => {
             <p className="font-bold text-slate-800">Patron</p>
             <p className="text-gray-600">Dr. Karthiya Banu</p>
             <p className="text-sm text-gray-500">Founder & CEO, Inspire Softech Group Companies</p>
+          </div>
+          <div className="mt-8 text-center">
+            <p className="font-semibold text-slate-800 mb-2">Industry Partners</p>
+            <p className="text-gray-600">Edinz Tech Private Limited • Adore Technology Solutions • iGreen StarTech Solutions</p>
           </div>
         </div>
       </div>
