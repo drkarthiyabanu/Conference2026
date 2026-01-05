@@ -22,7 +22,7 @@ const ConferencePage = () => {
         <Navbar />
 
         {/* --- SUB-NAVBAR MENU --- */}
-        <div className="sticky top-16 pt-[3%] bg-white/90 backdrop-blur-md border-b border-gray-200 z-20 hidden md:block">
+        <div className="sticky top-16 pt-[2%] bg-white/90 backdrop-blur-md border-b border-gray-200 z-20 hidden md:block">
           <div className="max-w-6xl mx-auto px-6 py-3">
             <ul className="flex justify-center gap-8 text-sm font-medium text-gray-600">
               <li><a href="#about" className="hover:text-amber-600 transition-colors">About</a></li>
@@ -36,7 +36,7 @@ const ConferencePage = () => {
         </div>
 
         {/* --- HERO SECTION --- */}
-        <div className="relative pt-[3%] text-white pt-32 pb-20 px-6">
+        <div className="relative pt-[3.5%] text-white pt-32 pb-20 px-6">
           <div className="max-w-6xl mx-auto text-center">
             <span className="inline-block py-1 px-4 rounded-full bg-amber-500 text-white text-xs font-bold mb-6 uppercase tracking-widest">
               ISO 9001:2015 Certified | AICTE-Associated
@@ -68,7 +68,7 @@ const ConferencePage = () => {
 
         {/* --- ABOUT & DATES SECTION --- */}
         <section id="about" className="py-20 px-6 bg-white">
-          <div className="max-w-6xl pt-[3%] mx-auto">
+          <div className="max-w-6xl pt-[3.5%] mx-auto">
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                 <h2 className="text-3xl font-bold text-slate-900 mb-6 border-l-4 border-amber-500 pl-4">About the Conference</h2>
@@ -111,7 +111,7 @@ const ConferencePage = () => {
 
         {/* --- TRACKS --- */}
         <section id="tracks" className="py-20 px-6 bg-slate-50">
-          <div className="max-w-6xl pt-[3%] mx-auto">
+          <div className="max-w-6xl pt-[3.5%] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Conference Tracks</h2>
               <p className="text-gray-500">Exploring multifaceted domains of innovation</p>
@@ -141,7 +141,7 @@ const ConferencePage = () => {
 
         {/* --- PUBLICATION & CERTIFICATION --- */}
         <section id="publication" className="py-20 px-6 bg-white">
-          <div className="max-w-6xl pt-[3%] mx-auto grid md:grid-cols-2 gap-12">
+          <div className="max-w-6xl pt-[3.5%] mx-auto grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
                 <ShieldCheck className="text-amber-600" /> Publication Benefits
@@ -182,7 +182,7 @@ const ConferencePage = () => {
 
         {/* --- AWARDS SECTION --- */}
         <section id="awards" className="py-20 px-6 bg-slate-900 text-white">
-          <div className="max-w-6xl pt-[3%] mx-auto">
+          <div className="max-w-6xl pt-[3.5%] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Global Excellence Awards – 2026</h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
@@ -214,7 +214,7 @@ const ConferencePage = () => {
 
         {/* --- REGISTRATION TABLE --- */}
         <section id="registration" className="py-20 px-6 bg-white">
-          <div className="max-w-4xl pt-[3%] mx-auto">
+          <div className="max-w-4xl pt-[3.5%] mx-auto">
             <h2 className="text-3xl font-bold text-center text-slate-900 mb-10">Registration Fees</h2>
             <div className="overflow-hidden bg-white rounded-2xl border border-gray-200 shadow-sm">
               <table className="w-full text-left">
@@ -243,7 +243,7 @@ const ConferencePage = () => {
 
         {/* --- PARTNERS & CONTACT --- */}
         <section id="contact" className="py-20 px-6 bg-slate-50 border-t border-gray-200">
-          <div className="max-w-6xl pt-[3%] mx-auto text-center">
+          <div className="max-w-6xl pt-[3.5%] mx-auto text-center">
             <div className="mb-16">
               <h3 className="text-lg font-bold text-gray-400 uppercase tracking-widest mb-8">Industry Partners</h3>
               <div className="flex flex-wrap justify-center gap-10 opacity-70">
