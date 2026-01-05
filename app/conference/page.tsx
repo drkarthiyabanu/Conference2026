@@ -1,5 +1,7 @@
 // src/app/conference/page.tsx
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import { 
   Calendar, MapPin, Mail, Phone, Award, BookOpen, 
   Users, Globe, CheckCircle, ShieldCheck, Landmark, Briefcase 
@@ -8,6 +10,40 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 const ConferencePage = () => {
+  const [activeSub, setActiveSub] = useState('about');
+
+  useEffect(() => {
+    const ids = ['about', 'tracks', 'publication', 'awards', 'registration', 'contact'];
+    const offset = 140; // adjust to account for fixed nav height
+
+    const onScroll = () => {
+      const scrollPos = window.scrollY + offset;
+      for (let id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+        if (scrollPos >= top && scrollPos < bottom) {
+          setActiveSub(id);
+          return;
+        }
+      }
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const handleSubNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSub(id);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Background Layer */}
@@ -22,7 +58,7 @@ const ConferencePage = () => {
         <Navbar />
 
         {/* --- SUB-NAVBAR MENU --- */}
-        <div className="sticky top-16 pt-[2%] bg-white/90 backdrop-blur-md border-b border-gray-200 z-20 hidden md:block">
+        <div className="sticky top-16 pt-[1.75%] bg-white/90 backdrop-blur-md border-b border-gray-200 z-20 hidden md:block">
           <div className="max-w-6xl mx-auto px-6 py-3">
             <ul className="flex justify-center gap-8 text-sm font-medium text-gray-600">
               <li><a href="#about" className="hover:text-amber-600 transition-colors">About</a></li>
