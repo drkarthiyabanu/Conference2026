@@ -58,21 +58,32 @@ const ConferencePage = () => {
         <Navbar />
 
         {/* --- SUB-NAVBAR MENU --- */}
-        <div className="sticky top-16 pt-[1.75%] bg-white/90 backdrop-blur-md border-b border-gray-200 z-20 hidden md:block">
-          <div className="max-w-6xl mx-auto px-6 py-3">
-            <ul className="flex justify-center gap-8 text-sm font-medium text-gray-600">
-              <li><a href="#about" className="hover:text-amber-600 transition-colors">About</a></li>
-              <li><a href="#tracks" className="hover:text-amber-600 transition-colors">Tracks</a></li>
-              <li><a href="#publication" className="hover:text-amber-600 transition-colors">Publication</a></li>
-              <li><a href="#awards" className="hover:text-amber-600 transition-colors">Awards</a></li>
-              <li><a href="#registration" className="hover:text-amber-600 transition-colors">Registration</a></li>
-              <li><a href="#contact" className="hover:text-amber-600 transition-colors">Contact</a></li>
-            </ul>
+          {/* --- SUB-NAVBAR MENU --- */}
+          <div className="sticky top-16 pt-[1.5%] z-20 hidden md:block">
+            <style>{`
+              .conference-subnav{background:linear-gradient(90deg, rgba(255,255,255,0.96), rgba(255,244,229,0.95));backdrop-filter:blur(6px);border-bottom:1px solid rgba(203,213,225,0.6);box-shadow:0 8px 30px rgba(2,6,23,0.08);border-bottom-left-radius:12px;border-bottom-right-radius:12px}
+              .conference-subnav ul{display:flex;justify-content:center;gap:2.25rem;padding:0;margin:0;list-style:none}
+              .conference-subnav a.nav-link{display:inline-block;padding:.45rem .9rem;border-radius:9999px;color:#475569;transition:transform .35s,background .25s,color .2s}
+              .conference-subnav a.nav-link.active{color:#c2410c;background:rgba(255,239,213,0.7);transform:scale(1.06);animation:zoom 1.6s ease-in-out infinite}
+              @keyframes zoom{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+            `}</style>
+
+            <div className="conference-subnav">
+              <div className="max-w-6xl mx-auto px-6 py-3">
+                <ul>
+                  <li><a href="#about" onClick={(e) => handleSubNavClick(e, 'about')} className={`nav-link ${activeSub === 'about' ? 'active' : ''}`}>About</a></li>
+                  <li><a href="#tracks" onClick={(e) => handleSubNavClick(e, 'tracks')} className={`nav-link ${activeSub === 'tracks' ? 'active' : ''}`}>Tracks</a></li>
+                  <li><a href="#publication" onClick={(e) => handleSubNavClick(e, 'publication')} className={`nav-link ${activeSub === 'publication' ? 'active' : ''}`}>Publication</a></li>
+                  <li><a href="#awards" onClick={(e) => handleSubNavClick(e, 'awards')} className={`nav-link ${activeSub === 'awards' ? 'active' : ''}`}>Awards</a></li>
+                  <li><a href="#registration" onClick={(e) => handleSubNavClick(e, 'registration')} className={`nav-link ${activeSub === 'registration' ? 'active' : ''}`}>Registration</a></li>
+                  <li><a href="#contact" onClick={(e) => handleSubNavClick(e, 'contact')} className={`nav-link ${activeSub === 'contact' ? 'active' : ''}`}>Contact</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
 
         {/* --- HERO SECTION --- */}
-        <div className="relative pt-[3.5%] text-white pt-32 pb-20 px-6">
+        <div className="relative pt-[5%] text-white pt-32 pb-20 px-6">
           <div className="max-w-6xl mx-auto text-center">
             <span className="inline-block py-1 px-4 rounded-full bg-amber-500 text-white text-xs font-bold mb-6 uppercase tracking-widest">
               ISO 9001:2015 Certified | AICTE-Associated
@@ -104,7 +115,7 @@ const ConferencePage = () => {
 
         {/* --- ABOUT & DATES SECTION --- */}
         <section id="about" className="py-20 px-6 bg-white">
-          <div className="max-w-6xl pt-[3.5%] mx-auto">
+          <div className="max-w-6xl pt-[5%] mx-auto">
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                 <h2 className="text-3xl font-bold text-slate-900 mb-6 border-l-4 border-amber-500 pl-4">About the Conference</h2>
@@ -147,7 +158,7 @@ const ConferencePage = () => {
 
         {/* --- TRACKS --- */}
         <section id="tracks" className="py-20 px-6 bg-slate-50">
-          <div className="max-w-6xl pt-[3.5%] mx-auto">
+          <div className="max-w-6xl pt-[5%] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Conference Tracks</h2>
               <p className="text-gray-500">Exploring multifaceted domains of innovation</p>
@@ -177,7 +188,7 @@ const ConferencePage = () => {
 
         {/* --- PUBLICATION & CERTIFICATION --- */}
         <section id="publication" className="py-20 px-6 bg-white">
-          <div className="max-w-6xl pt-[3.5%] mx-auto grid md:grid-cols-2 gap-12">
+          <div className="max-w-6xl pt-[5%] mx-auto grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
                 <ShieldCheck className="text-amber-600" /> Publication Benefits
@@ -218,7 +229,7 @@ const ConferencePage = () => {
 
         {/* --- AWARDS SECTION --- */}
         <section id="awards" className="py-20 px-6 bg-slate-900 text-white">
-          <div className="max-w-6xl pt-[3.5%] mx-auto">
+          <div className="max-w-6xl pt-[5%] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Global Excellence Awards – 2026</h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
@@ -250,7 +261,7 @@ const ConferencePage = () => {
 
         {/* --- REGISTRATION TABLE --- */}
         <section id="registration" className="py-20 px-6 bg-white">
-          <div className="max-w-4xl pt-[3.5%] mx-auto">
+          <div className="max-w-4xl pt-[5%] mx-auto">
             <h2 className="text-3xl font-bold text-center text-slate-900 mb-10">Registration Fees</h2>
             <div className="overflow-hidden bg-white rounded-2xl border border-gray-200 shadow-sm">
               <table className="w-full text-left">
@@ -279,7 +290,7 @@ const ConferencePage = () => {
 
         {/* --- PARTNERS & CONTACT --- */}
         <section id="contact" className="py-20 px-6 bg-slate-50 border-t border-gray-200">
-          <div className="max-w-6xl pt-[3.5%] mx-auto text-center">
+          <div className="max-w-6xl pt-[5%] mx-auto text-center">
             <div className="mb-16">
               <h3 className="text-lg font-bold text-gray-400 uppercase tracking-widest mb-8">Industry Partners</h3>
               <div className="flex flex-wrap justify-center gap-10 opacity-70">
