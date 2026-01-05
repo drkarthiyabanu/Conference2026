@@ -22,7 +22,7 @@ const ConferencePage = () => {
         <Navbar />
 
         {/* --- SUB-NAVBAR MENU --- */}
-        <div className="sticky top-16 bg-white/90 backdrop-blur-md border-b border-gray-200 z-20 hidden md:block">
+        <div className="sticky top-16 pt-[2%] bg-white/90 backdrop-blur-md border-b border-gray-200 z-20 hidden md:block">
           <div className="max-w-6xl mx-auto px-6 py-3">
             <ul className="flex justify-center gap-8 text-sm font-medium text-gray-600">
               <li><a href="#about" className="hover:text-amber-600 transition-colors">About</a></li>
