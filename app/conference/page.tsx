@@ -73,7 +73,7 @@ const ConferencePage = () => {
               <div className="lg:col-span-2">
                 <h2 className="text-3xl font-bold text-slate-900 mb-6 border-l-4 border-amber-500 pl-4">About the Conference</h2>
                 <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                  The GC³I² – 2026 is an international forum bringing together academicians, researchers, industry professionals, healthcare practitioners, entrepreneurs, and social leaders from across the globe[cite: 5].
+                  The GC³I² – 2026 is an international forum bringing together academicians, researchers, industry professionals, healthcare practitioners, entrepreneurs, and social leaders from across the globe.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   {[
@@ -84,7 +84,7 @@ const ConferencePage = () => {
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
                       <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-700 font-medium text-sm">{item} [cite: 7]</span>
+                      <span className="text-gray-700 font-medium text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -95,13 +95,13 @@ const ConferencePage = () => {
                   <Calendar className="w-5 h-5" /> Important Dates
                 </h3>
                 <div className="space-y-4">
-                  <DateItem label="Abstract Submission" date="9 February 2026" [cite: 24] />
-                  <DateItem label="Notification of Acceptance" date="15 February 2026" [cite: 24] />
-                  <DateItem label="Camera-Ready Paper" date="2 March 2026" [cite: 24] />
-                  <DateItem label="Awards Nomination" date="23 February 2026" [cite: 24] />
+                  <DateItem label="Abstract Submission" date="9 February 2026" />
+                  <DateItem label="Notification of Acceptance" date="15 February 2026" />
+                  <DateItem label="Camera-Ready Paper" date="2 March 2026" />
+                  <DateItem label="Awards Nomination" date="23 February 2026" />
                   <div className="pt-4 border-t border-slate-700 mt-4">
                     <p className="text-amber-500 font-bold">Conference Dates</p>
-                    <p className="text-xl">21 & 22 March 2026 [cite: 3, 24]</p>
+                    <p className="text-xl">21 & 22 March 2026</p>
                   </div>
                 </div>
               </div>
@@ -114,7 +114,7 @@ const ConferencePage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Conference Tracks</h2>
-              <p className="text-gray-500">Exploring multifaceted domains of innovation [cite: 8]</p>
+              <p className="text-gray-500">Exploring multifaceted domains of innovation</p>
             </div>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {[
@@ -132,7 +132,7 @@ const ConferencePage = () => {
                   <div className="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500 transition-colors">
                     <BookOpen className="w-6 h-6 text-amber-600 group-hover:text-white" />
                   </div>
-                  <h4 className="font-bold text-slate-800 leading-tight">{track} [cite: 9, 10, 11, 12, 13, 14, 15, 16, 17]</h4>
+                  <h4 className="font-bold text-slate-800 leading-tight">{track}</h4>
                 </div>
               ))}
             </div>
@@ -164,17 +164,17 @@ const ConferencePage = () => {
             <div className="bg-amber-50 p-8 rounded-2xl border border-amber-100">
               <h3 className="text-xl font-bold text-amber-900 mb-4">Certification & Recognition</h3>
               <p className="text-sm text-amber-800 mb-4">
-                Official Paper Presentation Certificates will be issued to all presenting authors[cite: 67].
+                Official Paper Presentation Certificates will be issued to all presenting authors.
               </p>
               <div className="flex items-center gap-4 bg-white p-4 rounded-xl border border-amber-200">
                 <Award className="w-10 h-10 text-amber-600" />
                 <div>
                   <p className="font-bold text-slate-900">Best Paper Awards</p>
-                  <p className="text-xs text-gray-500 italic">Based on originality, technical quality, and innovation[cite: 20].</p>
+                  <p className="text-xs text-gray-500 italic">Based on originality, technical quality, and innovation.</p>
                 </div>
               </div>
               <p className="mt-4 text-xs text-amber-700 font-medium">
-                * Hard copies provided to offline participants; digital copies for all[cite: 68].
+                * Hard copies provided to offline participants; digital copies for all.
               </p>
             </div>
           </div>
@@ -186,27 +186,27 @@ const ConferencePage = () => {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Global Excellence Awards – 2026</h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
-                Hosted by Edinz Tech Private Limited, recognizing leadership and impactful contributions across diverse domains[cite: 26].
+                Hosted by Edinz Tech Private Limited, recognizing leadership and impactful contributions across diverse domains.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <AwardCategory title="Academic & Research" items={["Best Academician of the Year", "Best Researcher of the Year", "Young Researcher Award", "Excellence in Teaching & Learning", "Outstanding Contribution to Research"]} [cite: 29, 30, 31, 32, 33] />
-              <AwardCategory title="Industry & Corporate" items={["Industry Leader of the Year", "Excellence in Corporate Leadership", "Innovation Leader Award", "Excellence in Digital Transformation"]} [cite: 35, 36, 37, 39] />
-              <AwardCategory title="Healthcare & Medical" items={["Medical Professional of the Year", "Excellence in Healthcare Services", "Innovation in Medical Technology", "Community Healthcare"]} [cite: 41, 42, 43, 44] />
-              <AwardCategory title="Technology & Innovation" items={["Technology Innovator of the Year", "Excellence in AI & Emerging Tech", "Best Startup / Entrepreneurial Innovation"]} [cite: 46, 47, 48] />
-              <AwardCategory title="Education & Training" items={["Excellence in Skill Development", "Outstanding Training Organisation", "Mentor of the Year"]} [cite: 51, 52, 54] />
-              <AwardCategory title="Social Impact" items={["Excellence in Social Impact", "Women Leadership Excellence", "Young Achiever Award"]} [cite: 56, 57, 58] />
+              <AwardCategory title="Academic & Research" items={["Best Academician of the Year", "Best Researcher of the Year", "Young Researcher Award", "Excellence in Teaching & Learning", "Outstanding Contribution to Research"]} />
+              <AwardCategory title="Industry & Corporate" items={["Industry Leader of the Year", "Excellence in Corporate Leadership", "Innovation Leader Award", "Excellence in Digital Transformation"]} />
+              <AwardCategory title="Healthcare & Medical" items={["Medical Professional of the Year", "Excellence in Healthcare Services", "Innovation in Medical Technology", "Community Healthcare"]} />
+              <AwardCategory title="Technology & Innovation" items={["Technology Innovator of the Year", "Excellence in AI & Emerging Tech", "Best Startup / Entrepreneurial Innovation"]} />
+              <AwardCategory title="Education & Training" items={["Excellence in Skill Development", "Outstanding Training Organisation", "Mentor of the Year"]} />
+              <AwardCategory title="Social Impact" items={["Excellence in Social Impact", "Women Leadership Excellence", "Young Achiever Award"]} />
             </div>
 
             <div className="mt-16 bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
               <h3 className="text-xl font-bold mb-4">How to Nominate?</h3>
               <p className="text-slate-300 mb-6 text-sm">
                 Submit a detailed resume and a brief summary of achievements to: <br />
-                <span className="text-amber-500 font-mono text-lg">globalconfinspire@gmail.com</span> [cite: 61]
+                <span className="text-amber-500 font-mono text-lg">globalconfinspire@gmail.com</span>
               </p>
               <button className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105">
-                Download Nomination Form [cite: 62]
+                Download Nomination Form
               </button>
             </div>
           </div>
@@ -220,9 +220,9 @@ const ConferencePage = () => {
               <table className="w-full text-left">
                 <thead className="bg-slate-50 text-slate-900 uppercase text-xs font-bold">
                   <tr>
-                    <th className="px-6 py-4">Category [cite: 70]</th>
-                    <th className="px-6 py-4">India (INR) [cite: 70]</th>
-                    <th className="px-6 py-4">International (USD) [cite: 70]</th>
+                    <th className="px-6 py-4">Category</th>
+                    <th className="px-6 py-4">India (INR)</th>
+                    <th className="px-6 py-4">International (USD)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -236,7 +236,7 @@ const ConferencePage = () => {
               </table>
             </div>
             <div className="mt-8 p-4 bg-slate-50 rounded-lg border border-slate-200 text-sm text-gray-600">
-              <p><strong>Payment Info:</strong> Mention Transaction ID / Reference Number in the registration form[cite: 72].</p>
+              <p><strong>Payment Info:</strong> Mention Transaction ID / Reference Number in the registration form.</p>
             </div>
           </div>
         </section>
@@ -247,20 +247,20 @@ const ConferencePage = () => {
             <div className="mb-16">
               <h3 className="text-lg font-bold text-gray-400 uppercase tracking-widest mb-8">Industry Partners</h3>
               <div className="flex flex-wrap justify-center gap-10 opacity-70">
-                <PartnerLogo name="Edinz Tech Private Limited" [cite: 76] />
-                <PartnerLogo name="Adore Technology Solutions" [cite: 76] />
-                <PartnerLogo name="iGreen StarTech Solutions" [cite: 76] />
+                <PartnerLogo name="Edinz Tech Private Limited" />
+                <PartnerLogo name="Adore Technology Solutions" />
+                <PartnerLogo name="iGreen StarTech Solutions" />
               </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 text-center">
-              <ContactCard icon={<Mail />} title="Email Us" content="globalconfinspire@gmail.com" link="mailto:globalconfinspire@gmail.com" [cite: 78] />
-              <ContactCard icon={<Phone />} title="Call Us" content="+91 86674 93679" link="tel:+918667493679" [cite: 78] />
+              <ContactCard icon={<Mail />} title="Email Us" content="globalconfinspire@gmail.com" link="mailto:globalconfinspire@gmail.com" />
+              <ContactCard icon={<Phone />} title="Call Us" content="+91 86674 93679" link="tel:+918667493679" />
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                  <Users className="w-8 h-8 text-amber-500 mx-auto mb-4" />
                  <p className="font-bold text-slate-900">Patron</p>
-                 <p className="text-gray-600 text-sm">Dr. Karthiya Banu [cite: 74]</p>
-                 <p className="text-xs text-gray-400">Founder & CEO, Inspire Softech Group [cite: 74]</p>
+                 <p className="text-gray-600 text-sm">Dr. Karthiya Banu</p>
+                 <p className="text-xs text-gray-400">Founder & CEO, Inspire Softech Group</p>
               </div>
             </div>
           </div>
