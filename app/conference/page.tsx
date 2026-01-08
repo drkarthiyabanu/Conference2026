@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Calendar, MapPin, Mail, Phone, Award, BookOpen, 
-  Users, Globe, CheckCircle, ShieldCheck, Landmark, Briefcase 
+  Users, Globe, CheckCircle, ShieldCheck, Landmark, Briefcase, CreditCard, ArrowRight
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -109,6 +109,12 @@ const ConferencePage = () => {
                 <Globe className="w-5 h-5 text-amber-500" />
                 <span>Mode: Hybrid (Offline & Online)</span>
               </div>
+            </div>
+            
+            <div className="flex justify-center">
+              <a href="#" className="inline-block bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                Download Brochure
+              </a>
             </div>
           </div>
         </div>
@@ -252,9 +258,6 @@ const ConferencePage = () => {
                 Submit a detailed resume and a brief summary of achievements to: <br />
                 <span className="text-amber-500 font-mono text-lg">globalconfinspire@gmail.com</span>
               </p>
-              <button className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105">
-                Download Nomination Form
-              </button>
             </div>
           </div>
         </section>
@@ -262,6 +265,23 @@ const ConferencePage = () => {
         {/* --- REGISTRATION TABLE --- */}
         <section id="registration" className="py-20 px-6 bg-white">
           <div className="max-w-4xl pt-[5%] mx-auto">
+            <div className="mb-8 bg-slate-50 p-6 rounded-lg border border-slate-200">
+              <h3 className="text-2xl font-bold mb-3 text-slate-900">Paper Presentation Registration</h3>
+              <p className="text-gray-600 mb-4">Participants intending to present a paper must complete the Paper Presentation Registration Form.</p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+                <a href="https://forms.gle/GXc2QXiKhhYJWvfU7" target="_blank" rel="noopener noreferrer" className="bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded-full font-semibold">Open Registration Form</a>
+          
+              </div>
+
+              <h4 className="text-lg font-semibold mb-2 text-slate-900">Certification</h4>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>All registered paper presenters will receive an official Paper Presentation Certificate.</li>
+                <li>Certificates will be issued to all authors who successfully present their papers.</li>
+                <li>Digital certificates will be provided to all participants; hard copies will be issued to offline participants where applicable.</li>
+              </ul>
+            </div>
+
             <h2 className="text-3xl font-bold text-center text-slate-900 mb-10">Registration Fees</h2>
             <div className="overflow-hidden bg-white rounded-2xl border border-gray-200 shadow-sm">
               <table className="w-full text-left">
@@ -269,16 +289,82 @@ const ConferencePage = () => {
                   <tr>
                     <th className="px-6 py-4">Category</th>
                     <th className="px-6 py-4">India (INR)</th>
+                    <th className="px-6 py-4">Payment</th>
                     <th className="px-6 py-4">International (USD)</th>
+                    <th className="px-6 py-4">Payment</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
-                  <FeeRow category="Online Paper Presenter" inr="₹750" usd="$25" />
-                  <FeeRow category="Offline Student" inr="₹1,250" usd="$50" />
-                  <FeeRow category="Offline Research Scholar" inr="₹1,500" usd="$60" />
-                  <FeeRow category="Offline Academician" inr="₹1,750" usd="$75" />
-                  <FeeRow category="Offline Industry Professional" inr="₹2,500" usd="$90" />
-                  <FeeRow category="Awards Nomination" inr="₹3,000" usd="$100" />
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 font-medium text-slate-700">Online Paper Presenter</td>
+                    <td className="px-6 py-4 text-slate-600">₹750</td>
+                    <td className="px-2 py-4">
+                      <a href="https://rzp.io/rzp/edmlvzag" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                        <CreditCard className="w-3 h-3" /> Register Now
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    </td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$25</td>
+                    <td className="px-2 py-4 text-center align-middle" rowSpan={6}>
+                      <div className="text-sm font-semibold text-amber-600">For International Payments</div>
+                      <div className="text-xs text-slate-600 mt-1">contact Admin</div>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 font-medium text-slate-700">Offline Student</td>
+                    <td className="px-6 py-4 text-slate-600">₹1,250</td>
+                    <td className="px-2 py-4">
+                      <a href="https://rzp.io/rzp/A14ubQnO" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                        <CreditCard className="w-3 h-3" /> Register Now
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    </td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$50</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 font-medium text-slate-700">Offline Research Scholar</td>
+                    <td className="px-6 py-4 text-slate-600">₹1,500</td>
+                    <td className="px-2 py-4">
+                      <a href="https://rzp.io/rzp/H63vX2S" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                        <CreditCard className="w-3 h-3" /> Register Now
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    </td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$60</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 font-medium text-slate-700">Offline Academician</td>
+                    <td className="px-6 py-4 text-slate-600">₹1,750</td>
+                    <td className="px-2 py-4">
+                      <a href="https://rzp.io/rzp/FhE4CANt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                        <CreditCard className="w-3 h-3" /> Register Now
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    </td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$75</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 font-medium text-slate-700">Offline Industry Professional</td>
+                    <td className="px-6 py-4 text-slate-600">₹2,500</td>
+                    <td className="px-2 py-4">
+                      <a href="https://rzp.io/rzp/d4OCrd4a" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                        <CreditCard className="w-3 h-3" /> Register Now
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    </td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$90</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 font-medium text-slate-700">Awards Nomination</td>
+                    <td className="px-6 py-4 text-slate-600">₹3,000</td>
+                    <td className="px-2 py-4">
+                      <a href="https://rzp.io/rzp/vDNoXs2" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                        <CreditCard className="w-3 h-3" /> Register Now
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    </td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$100</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -291,24 +377,27 @@ const ConferencePage = () => {
         {/* --- PARTNERS & CONTACT --- */}
         <section id="contact" className="py-20 px-6 bg-slate-50 border-t border-gray-200">
           <div className="max-w-6xl pt-[5%] mx-auto text-center">
-            <div className="mb-16">
-              <h3 className="text-lg font-bold text-gray-400 uppercase tracking-widest mb-8">Industry Partners</h3>
-              <div className="flex flex-wrap justify-center gap-10 opacity-70">
+            <div className="mb-12">
+              <div className="mx-auto w-full sm:w-96 bg-white p-8 rounded-2xl shadow-xl border border-amber-100 mb-6 group hover:bg-amber-600 hover:border-amber-600 transition-colors">
+                <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3 text-amber-600 group-hover:bg-white/10 group-hover:text-white">
+                  <Users className="w-6 h-6" />
+                </div>
+                <p className="text-amber-500 text-sm font-semibold uppercase tracking-widest group-hover:text-white">Patron</p>
+                <p className="font-bold text-slate-900 text-lg mt-2 group-hover:text-white">Dr. Karthiya Banu</p>
+                <p className="text-xs text-gray-400 mt-1 group-hover:text-white">Founder & CEO, Inspire Softech Group</p>
+              </div>
+
+              <h3 className="text-lg font-bold text-gray-400 uppercase tracking-widest mb-6">Industry Partners</h3>
+              <div className="flex flex-wrap justify-center gap-10 opacity-80 mb-8">
                 <PartnerLogo name="Edinz Tech Private Limited" />
                 <PartnerLogo name="Adore Technology Solutions" />
                 <PartnerLogo name="iGreen StarTech Solutions" />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="grid md:grid-cols-2 gap-8 justify-center max-w-3xl mx-auto">
               <ContactCard icon={<Mail />} title="Email Us" content="globalconfinspire@gmail.com" link="mailto:globalconfinspire@gmail.com" />
               <ContactCard icon={<Phone />} title="Call Us" content="+91 86674 93679" link="tel:+918667493679" />
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                 <Users className="w-8 h-8 text-amber-500 mx-auto mb-4" />
-                 <p className="font-bold text-slate-900">Patron</p>
-                 <p className="text-gray-600 text-sm">Dr. Karthiya Banu</p>
-                 <p className="text-xs text-gray-400">Founder & CEO, Inspire Softech Group</p>
-              </div>
             </div>
           </div>
         </section>
@@ -341,11 +430,24 @@ const AwardCategory = ({ title, items }: { title: string, items: string[] }) => 
   </div>
 );
 
-const FeeRow = ({ category, inr, usd }: { category: string, inr: string, usd: string }) => (
+const FeeRow = ({ category, inr, usd, inrLink, usdLink }: { category: string, inr: string, usd: string, inrLink?: string, usdLink?: string }) => (
   <tr className="hover:bg-slate-50 transition-colors">
     <td className="px-6 py-4 font-medium text-slate-700">{category}</td>
     <td className="px-6 py-4 text-slate-600">{inr}</td>
+    <td className="px-2 py-4">
+      {inrLink ? (
+        <a href={inrLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-md">
+          <CreditCard className="w-4 h-4" /> Register Now
+          <ArrowRight className="w-4 h-4" />
+        </a>
+      ) : (
+        <span className="text-xs text-slate-400 italic">—</span>
+      )}
+    </td>
     <td className="px-6 py-4 text-slate-600">{usd}</td>
+    <td className="px-2 py-4">
+      <span className="text-xs text-slate-400 italic">—</span>
+    </td>
   </tr>
 );
 
