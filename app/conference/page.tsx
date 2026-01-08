@@ -258,6 +258,11 @@ const ConferencePage = () => {
                 Submit a detailed resume and a brief summary of achievements to: <br />
                 <span className="text-amber-500 font-mono text-lg">globalconfinspire@gmail.com</span>
               </p>
+              <div className="flex justify-center mt-6">
+                <a href="https://forms.gle/rZJcaTBkSNv98Rjp9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">
+                  <ArrowRight className="w-4 h-4" /> Open Awards Nomination Form
+                </a>
+              </div>
             </div>
           </div>
         </section>
