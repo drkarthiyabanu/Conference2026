@@ -50,8 +50,20 @@ const NavbarDesktop: React.FC<Props> = ({ links }) => {
             return;
         }
 
-        // add more page checks if you create more routes:
-        // if (pathname.startsWith("/companies")) { setActiveLink("Our Companies"); return; }
+        if (pathname.startsWith("/services")) {
+            setActiveLink("Services");
+            return;
+        }
+
+        if (pathname.startsWith("/conference")) {
+            setActiveLink("Conference 2026");
+            return;
+        }
+
+        if (pathname.startsWith("/contact")) {
+            setActiveLink("Contact");
+            return;
+        }
 
         // Default fallback: clear selection for anchor-section pages
         setActiveLink("");
