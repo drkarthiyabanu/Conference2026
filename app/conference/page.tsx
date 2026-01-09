@@ -13,7 +13,7 @@ const ConferencePage = () => {
   const [activeSub, setActiveSub] = useState('about');
 
   useEffect(() => {
-    const ids = ['about', 'tracks', 'publication', 'awards', 'registration', 'contact'];
+    const ids = ['about', 'advisory', 'tracks', 'publication', 'awards', 'registration', 'contact'];
     const offset = 140; // adjust to account for fixed nav height
 
     const onScroll = () => {
@@ -72,6 +72,7 @@ const ConferencePage = () => {
               <div className="max-w-6xl mx-auto px-6 py-3">
                 <ul>
                   <li><a href="#about" onClick={(e) => handleSubNavClick(e, 'about')} className={`nav-link ${activeSub === 'about' ? 'active' : ''}`}>About</a></li>
+                  <li><a href="#advisory" onClick={(e) => handleSubNavClick(e, 'advisory')} className={`nav-link ${activeSub === 'advisory' ? 'active' : ''}`}>Advisory Board</a></li>
                   <li><a href="#tracks" onClick={(e) => handleSubNavClick(e, 'tracks')} className={`nav-link ${activeSub === 'tracks' ? 'active' : ''}`}>Tracks</a></li>
                   <li><a href="#publication" onClick={(e) => handleSubNavClick(e, 'publication')} className={`nav-link ${activeSub === 'publication' ? 'active' : ''}`}>Publication</a></li>
                   <li><a href="#awards" onClick={(e) => handleSubNavClick(e, 'awards')} className={`nav-link ${activeSub === 'awards' ? 'active' : ''}`}>Awards</a></li>
@@ -159,6 +160,14 @@ const ConferencePage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* --- ADVISORY BOARD --- */}
+        <section id="advisory" className="py-20 px-6 bg-white">
+          <div className="max-w-6xl pt-[5%] mx-auto text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Advisory Board</h2>
+            <p className="text-gray-600 text-lg">Advisory Board members will be announced shortly.</p>
           </div>
         </section>
 
