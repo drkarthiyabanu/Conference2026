@@ -315,7 +315,7 @@ const ConferencePage = () => {
                 <tbody className="divide-y divide-gray-100">
                   <tr className="hover:bg-slate-50 transition-colors">
                     <td className="px-6 py-4 font-medium text-slate-700">Online Paper Presenter</td>
-                    <td className="px-6 py-4 text-slate-600">₹2,750</td>
+                    <td className="px-6 py-4 text-slate-600">₹750</td>
                     <td className="px-2 py-4">
                       <a href="https://rzp.io/rzp/edmlvzag" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
@@ -348,7 +348,7 @@ const ConferencePage = () => {
                         <ArrowRight className="w-3 h-3" />
                       </a>
                     </td>
-                    <td className="px-6 py-4 text-slate-600 text-center">$69</td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$60</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
                     <td className="px-6 py-4 font-medium text-slate-700">Offline Academician</td>
@@ -359,11 +359,11 @@ const ConferencePage = () => {
                         <ArrowRight className="w-3 h-3" />
                       </a>
                     </td>
-                    <td className="px-6 py-4 text-slate-600 text-center">$70</td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$75</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
                     <td className="px-6 py-4 font-medium text-slate-700">Offline Industry Professional</td>
-                    <td className="px-6 py-4 text-slate-600">₹2,500</td>
+                    <td className="px-6 py-4 text-slate-600">₹2,550</td>
                     <td className="px-2 py-4">
                       <a href="https://rzp.io/rzp/d4OCrd4a" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
