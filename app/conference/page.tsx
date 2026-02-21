@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { downloadPDF } from '../../utils/downloadUtils';
 
 const ConferencePage = () => {
   const [activeSub, setActiveSub] = useState('about');
@@ -104,7 +105,7 @@ const ConferencePage = () => {
               </div>
               <div className="flex items-center justify-center gap-2 bg-white/10 px-5 py-3 rounded-lg backdrop-blur-sm border border-white/20">
                 <MapPin className="w-5 h-5 text-amber-500" />
-                <span>Olympia Tech Park Auditorium, Chennai</span>
+                <span>Olympia Technology Park Auditorium, Guindy, Chennai</span>
               </div>
               <div className="flex items-center justify-center gap-2 bg-white/10 px-5 py-3 rounded-lg backdrop-blur-sm border border-white/20">
                 <Globe className="w-5 h-5 text-amber-500" />
@@ -113,9 +114,12 @@ const ConferencePage = () => {
             </div>
             
             <div className="flex justify-center">
-              <a href="#" className="inline-block bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+              <button 
+                onClick={() => downloadPDF('Conference brochure 2026.pdf', '/pdfs/Conference brochure 2026.pdf')}
+                className="inline-block bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg cursor-pointer"
+              >
                 Download Brochure
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -149,10 +153,10 @@ const ConferencePage = () => {
                   <Calendar className="w-5 h-5" /> Important Dates
                 </h3>
                 <div className="space-y-4">
-                  <DateItem label="Abstract Submission" date="9 February 2026" />
-                  <DateItem label="Notification of Acceptance" date="15 February 2026" />
-                  <DateItem label="Camera-Ready Paper" date="2 March 2026" />
-                  <DateItem label="Awards Nomination" date="23 February 2026" />
+                  <DateItem label="Abstract Submission" date="2 March 2026" />
+                  <DateItem label="Notification of Acceptance" date="6 March 2026" />
+                  <DateItem label="Camera-Ready Paper" date="10 March 2026" />
+                  <DateItem label="Awards Nomination" date="2 March 2026" />
                   <div className="pt-4 border-t border-slate-700 mt-4">
                     <p className="text-amber-500 font-bold">Conference Dates</p>
                     <p className="text-xl">21 & 22 March 2026</p>
@@ -311,7 +315,7 @@ const ConferencePage = () => {
                 <tbody className="divide-y divide-gray-100">
                   <tr className="hover:bg-slate-50 transition-colors">
                     <td className="px-6 py-4 font-medium text-slate-700">Online Paper Presenter</td>
-                    <td className="px-6 py-4 text-slate-600">₹750</td>
+                    <td className="px-6 py-4 text-slate-600">₹2,750</td>
                     <td className="px-2 py-4">
                       <a href="https://rzp.io/rzp/edmlvzag" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
@@ -344,7 +348,7 @@ const ConferencePage = () => {
                         <ArrowRight className="w-3 h-3" />
                       </a>
                     </td>
-                    <td className="px-6 py-4 text-slate-600 text-center">$60</td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$69</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
                     <td className="px-6 py-4 font-medium text-slate-700">Offline Academician</td>
@@ -355,7 +359,7 @@ const ConferencePage = () => {
                         <ArrowRight className="w-3 h-3" />
                       </a>
                     </td>
-                    <td className="px-6 py-4 text-slate-600 text-center">$75</td>
+                    <td className="px-6 py-4 text-slate-600 text-center">$70</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
                     <td className="px-6 py-4 font-medium text-slate-700">Offline Industry Professional</td>
