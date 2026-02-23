@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: conference2026-app:latest
     container_name: inspire-conference-app
     ports:
       - "3000:3000"
