@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # Next.js Application
   app:
@@ -28,7 +26,7 @@ services:
 
   # MongoDB (optional - only if you need a database)
   mongodb:
-    image: mongo:7-alpine
+    image: mongo:latest
     container_name: inspire-mongodb
     ports:
       - "27017:27017"
