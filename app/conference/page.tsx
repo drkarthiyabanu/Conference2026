@@ -153,10 +153,10 @@ const ConferencePage = () => {
                   <Calendar className="w-5 h-5" /> Important Dates
                 </h3>
                 <div className="space-y-4">
-                  <DateItem label="Abstract Submission" date="2 March 2026" />
-                  <DateItem label="Notification of Acceptance" date="6 March 2026" />
-                  <DateItem label="Camera-Ready Paper" date="10 March 2026" />
-                  <DateItem label="Awards Nomination" date="2 March 2026" />
+                  <DateItem label="Abstract Submission" date="9 March 2026" />
+                  <DateItem label="Notification of Acceptance" date="12 March 2026" />
+                  <DateItem label="Camera-Ready Paper" date="16 March 2026" />
+                  <DateItem label="Awards Nomination" date="9 March 2026" />
                   <div className="pt-4 border-t border-slate-700 mt-4">
                     <p className="text-amber-500 font-bold">Conference Dates</p>
                     <p className="text-xl">21 & 22 March 2026</p>
