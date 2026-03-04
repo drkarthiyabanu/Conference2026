@@ -22,10 +22,10 @@ export const committeesData: CommitteeSection[] = [
     members: [
       {
         id: "patron-1",
-        name: "Dr. Karthiya Banu",
+        name: "Dr. Karthiya Banu Ph.D.,",
         role: "Founder & CEO",
         organization: "Inspire Softech Group Companies",
-        honors: "Ph.D.",
+        honors: "Best Entrepreneur Awardee",
         imageName: "karthiya_banu",
       },
     ],
@@ -37,7 +37,7 @@ export const committeesData: CommitteeSection[] = [
     members: [
       {
         id: "dignitary-1",
-        name: "Dr. R. Ravanan",
+        name: "Dr. R. Ravanan M.Sc., M.Phil., Ph.D., FSMS",
         role: "Joint Director (P & D) (Retd)",
         organization: "Directorate of Collegiate Education, Chennai",
         honors: "Tamil Nadu Scientist Awardee",
@@ -45,21 +45,21 @@ export const committeesData: CommitteeSection[] = [
       },
       {
         id: "dignitary-2",
-        name: "Shri. K. Karunagaran",
+        name: "Shri. K. Karunagaran M.E.,",
         role: "Executive Engineer",
         organization: "HOTLINES, TANTRANSCO, Vellore",
         imageName: "k_karunagaran",
       },
       {
         id: "dignitary-3",
-        name: "Dr. C. Sundar",
+        name: "Dr. C. Sundar Ph.D.,",
         role: "Principal",
         organization: "Dhanraj Baid Jain College, Chennai",
         imageName: "c_sundar",
       },
       {
         id: "dignitary-4",
-        name: "Dr. J. Indumathi",
+        name: "Dr. J. Indumathi Ph.D.,",
         role: "Dean",
         organization: "Sree Balaji Institute of Science and Technology",
         extra: "Professor of Practice, Anna University",
@@ -67,14 +67,14 @@ export const committeesData: CommitteeSection[] = [
       },
       {
         id: "dignitary-5",
-        name: "Dr. K. Chokkanathan",
+        name: "Dr. K. Chokkanathan Ph.D.,",
         role: "Associate Professor",
         organization: "MITS Deemed To Be University, Andhra Pradesh",
         imageName: "k_chokkanathan",
       },
       {
         id: "dignitary-6",
-        name: "Dr. P. M. Anbumaran",
+        name: "Dr. P. M. Anbumaran M.B.B.S ,M.D.,",
         role: "Professor - Respiratory Medicine",
         organization: "Saveetha Medical College and Hospital",
         imageName: "p_m_anbumaran",
@@ -95,28 +95,28 @@ export const committeesData: CommitteeSection[] = [
     members: [
       {
         id: "advisory-1",
-        name: "Dr. S. Umarani",
+        name: "Dr. S. Umarani MCA.,Ph.D.,",
         role: "Professor, Dept. of Computer Science",
         organization: "SRM Institute of Science and Technology, Chennai",
         imageName: "s_umarani",
       },
       {
         id: "advisory-2",
-        name: "Dr. Venkateswarlu Karumuri",
+        name: "Dr. Venkateswarlu Karumuri Ph.D.,",
         role: "Assistant Professor, School of Management",
         organization: "MITS Deemed To Be University, Andhra Pradesh",
         imageName: "venkateswarlu_karumuri",
       },
       {
         id: "advisory-3",
-        name: "Dr. S. Usharani",
+        name: "Dr. S. Usharani Ph.D.,",
         role: "Head of the Department, Dept. of MCA",
         organization: "Viswam Engineering College, Andhra Pradesh",
         imageName: "s_usharani",
       },
       {
         id: "advisory-4",
-        name: "Dr. Agnibha Das Majumdar",
+        name: "Dr. Agnibha Das Majumdar Ph.D.,",
         role: "Independent Researcher and Physics Educator",
         organization: "Ex-Assistant Professor, MITS University",
         imageName: "agnibha_das_majumdar",
