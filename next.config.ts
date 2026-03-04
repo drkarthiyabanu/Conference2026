@@ -8,6 +8,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Docker optimization: Output standalone build
+  output: 'standalone',
+
   // Configuration to allow external images
   images: {
     // remotePatterns is the modern way to configure external image sources
