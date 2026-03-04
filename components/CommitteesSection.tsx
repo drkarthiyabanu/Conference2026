@@ -19,7 +19,7 @@ const CommitteesSection: React.FC = () => {
         {/* Main Section Header */}
         <div className="text-center mb-20">          
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
-            Organizing{" "}
+            Organizing{" & "}
             <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">
               Technical Committees
             </span>
@@ -70,3 +70,4 @@ const CommitteesSection: React.FC = () => {
 };
 
 export default CommitteesSection;
+
