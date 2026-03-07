@@ -125,6 +125,48 @@ export const committeesData: CommitteeSection[] = [
     gridCols: "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
   },
   {
+    title: "Review Committee",
+    description: "Expert reviewers ensuring the highest standards of academic excellence.",
+    gridCols: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
+    members: [
+      {
+        id: "review-1",
+        name: "Dr. G. Fathima, Ph.D.",
+        role: "Professor & Head, Dept. of Computer Science and Engineering",
+        organization: "Adhiyamaan College of Engineering (An Autonomous Institution), Hosur",
+        imageName: "g_fathima"
+      },
+      {
+        id: "review-2",
+        name: "Dr. R. PARAMESWARI",
+        role: "Director – Academics, Professor & Head, Dept. of Computer Science and Information Technology",
+        organization: "Vels Institute of Science, Technology & Advanced Studies (VISTAS), Palavaram, Chennai",
+        imageName: "r_parameswari"
+      },
+      {
+        id: "review-3",
+        name: "Dr. G. Thailambal, M.C.A., M.Phil., Ph.D.",
+        role: "Professor & Head, Dept. of Advanced Computing and Analytics",
+        organization: "Vels Institute of Science Technology and Advanced Studies (VISTAS), Palavaram, Chennai",
+        imageName: "g_thailambal"
+      },
+      {
+        id: "review-4",
+        name: "Dr. R. DEVI",
+        role: "Professor & Head, Dept. of Applied Computing & Emerging Technologies",
+        organization: "Vels Institute of Science Technology and Advanced Studies (VISTAS), Palavaram, Chennai",
+        imageName: "r_devi"
+      },
+      {
+        id: "review-5",
+        name: "Dr. K. Shanmugapriya M.B.B.S. M.D.",
+        role: "Associate Professor-Respiratory Medicine",
+        organization: "Chennai Chest Clinic, Chennai",
+        imageName: "k_shanmugapriya"
+      }
+    ]
+  },
+  {
     title: "Technical & Media Team",
     description: "Conference Operations & Communications",
     members: [
