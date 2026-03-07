@@ -3,13 +3,14 @@
 import React from 'react';
 import CommitteeCard from './CommitteeCard';
 import { committeesData } from '@/data/committees';
-import { Users, Users2, Briefcase, Award } from 'lucide-react';
+import { Users, Users2,ShieldCheck, Briefcase, Award } from 'lucide-react';
 
 const CommitteesSection: React.FC = () => {
   const sectionIcons = {
     "Patron": <Award className="w-6 h-6" />,
     "Conference Dignitaries": <Users className="w-6 h-6" />,
     "Advisory Committee": <Users2 className="w-6 h-6" />,
+    "Review Committee": <ShieldCheck className="w-6 h-6" />,
     "Technical & Media Team": <Briefcase className="w-6 h-6" />,
   };
 
