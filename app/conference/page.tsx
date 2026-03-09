@@ -313,7 +313,7 @@ const ConferencePage = () => {
                     <td className="px-6 py-4 font-medium text-slate-700">Online Paper Presenter</td>
                     <td className="px-6 py-4 text-slate-600">₹750</td>
                     <td className="px-2 py-4">
-                      <a href="https://rzp.io/rzp/edmlvzag" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                      <a href="https://rzp.io/rzp/zlg6dYE" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
                         <ArrowRight className="w-3 h-3" />
                       </a>
@@ -328,7 +328,7 @@ const ConferencePage = () => {
                     <td className="px-6 py-4 font-medium text-slate-700">Offline Student</td>
                     <td className="px-6 py-4 text-slate-600">₹1,250</td>
                     <td className="px-2 py-4">
-                      <a href="https://rzp.io/rzp/A14ubQnO" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                      <a href="https://rzp.io/rzp/vTji2Jog" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
                         <ArrowRight className="w-3 h-3" />
                       </a>
@@ -339,7 +339,7 @@ const ConferencePage = () => {
                     <td className="px-6 py-4 font-medium text-slate-700">Offline Research Scholar</td>
                     <td className="px-6 py-4 text-slate-600">₹1,500</td>
                     <td className="px-2 py-4">
-                      <a href="https://rzp.io/rzp/H63vX2S" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                      <a href="https://rzp.io/rzp/5kNhGCNA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
                         <ArrowRight className="w-3 h-3" />
                       </a>
@@ -350,7 +350,7 @@ const ConferencePage = () => {
                     <td className="px-6 py-4 font-medium text-slate-700">Offline Academician</td>
                     <td className="px-6 py-4 text-slate-600">₹1,750</td>
                     <td className="px-2 py-4">
-                      <a href="https://rzp.io/rzp/FhE4CANt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                      <a href="https://rzp.io/rzp/RBIwqWt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
                         <ArrowRight className="w-3 h-3" />
                       </a>
@@ -361,7 +361,7 @@ const ConferencePage = () => {
                     <td className="px-6 py-4 font-medium text-slate-700">Offline Industry Professional</td>
                     <td className="px-6 py-4 text-slate-600">₹2,550</td>
                     <td className="px-2 py-4">
-                      <a href="https://rzp.io/rzp/d4OCrd4a" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                      <a href="https://rzp.io/rzp/cN1IOpKp" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
                         <ArrowRight className="w-3 h-3" />
                       </a>
@@ -372,7 +372,7 @@ const ConferencePage = () => {
                     <td className="px-6 py-4 font-medium text-slate-700">Awards Nomination</td>
                     <td className="px-6 py-4 text-slate-600">₹3,000</td>
                     <td className="px-2 py-4">
-                      <a href="https://rzp.io/rzp/vDNoXs2" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
+                      <a href="https://rzp.io/rzp/k1YmhJba" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 py-1 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-md">
                         <CreditCard className="w-3 h-3" /> Register Now
                         <ArrowRight className="w-3 h-3" />
                       </a>

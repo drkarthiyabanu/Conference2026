@@ -165,6 +165,7 @@ export const committeesData: CommitteeSection[] = [
         imageName: "k_shanmugapriya"
       }
     ]
+    
   },
   {
     title: "Technical & Media Team",
