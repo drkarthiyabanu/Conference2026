@@ -86,42 +86,118 @@ const ConferencePage = () => {
           </div>
 
         {/* --- HERO SECTION --- */}
-        <div className="relative pt-[5%] text-white pt-32 pb-20 px-6">
-          <div className="max-w-6xl mx-auto text-center">
-            <span className="inline-block py-1 px-4 rounded-full bg-amber-500 text-white text-xs font-bold mb-6 uppercase tracking-widest">
-              ISO 9001:2015 Certified | AICTE-Associated
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
-              GC³I² – 2026
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-light mb-8 text-gray-200">
-              Global Conference & Excellence Awards on <br />
-              <span className="text-amber-500 font-semibold italic">Innovation, Intelligence & Impact</span>
-            </h2>
+        <div className="relative pt-[5%] text-white pt-32 pb-20 px-3 md:px-6">
+          <style>{`
+            @keyframes scroll-left {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .image-scroll {
+              animation: scroll-left 60s linear infinite !important;
+            }
+            .scroll-container {
+              overflow: hidden;
+            }
+            .scroll-inner {
+              display: flex;
+              gap: 1rem;
+              width: fit-content;
+            }
+          `}</style>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-center max-w-7xl mx-auto">
             
-            <div className="flex flex-col md:flex-row justify-center gap-6 text-sm md:text-base mb-10">
-              <div className="flex items-center justify-center gap-2 bg-white/10 px-5 py-3 rounded-lg backdrop-blur-sm border border-white/20">
-                <Calendar className="w-5 h-5 text-amber-500" />
-                <span>21 & 22 March 2026</span>
+            {/* CENTER CONTENT */}
+            <div className="col-span-1 md:col-span-12 text-center">
+              <span className="inline-block py-1 px-4 rounded-full bg-amber-500 text-white text-xs font-bold mb-6 uppercase tracking-widest">
+                ISO 9001:2015 Certified | AICTE-Associated
+              </span>
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+                GC³I² – 2026
+              </h1>
+              <h2 className="text-xl md:text-3xl font-light mb-8 text-gray-200">
+                Global Conference & Excellence Awards on <br />
+                <span className="text-amber-500 font-semibold italic">Innovation, Intelligence & Impact</span>
+              </h2>
+              
+              <div className="flex flex-col md:flex-row justify-center gap-3 md:gap-6 text-xs md:text-base mb-10">
+                <div className="flex items-center justify-center gap-2 bg-white/10 px-3 md:px-5 py-2 md:py-3 rounded-lg backdrop-blur-sm border border-white/20">
+                  <Calendar className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                  <span>21 & 22 March 2026</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 bg-white/10 px-3 md:px-5 py-2 md:py-3 rounded-lg backdrop-blur-sm border border-white/20">
+                  <MapPin className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                  <span className="hidden md:inline">Olympia Technology Park Auditorium, Guindy, Chennai</span>
+                  <span className="inline md:hidden">Chennai, Guindy</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 bg-white/10 px-3 md:px-5 py-2 md:py-3 rounded-lg backdrop-blur-sm border border-white/20">
+                  <Globe className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                  <span>Mode: Hybrid (Offline & Online)</span>
+                </div>
               </div>
-              <div className="flex items-center justify-center gap-2 bg-white/10 px-5 py-3 rounded-lg backdrop-blur-sm border border-white/20">
-                <MapPin className="w-5 h-5 text-amber-500" />
-                <span>Olympia Technology Park Auditorium, Guindy, Chennai</span>
-              </div>
-              <div className="flex items-center justify-center gap-2 bg-white/10 px-5 py-3 rounded-lg backdrop-blur-sm border border-white/20">
-                <Globe className="w-5 h-5 text-amber-500" />
-                <span>Mode: Hybrid (Offline & Online)</span>
+              
+              <div className="flex justify-center">
+                <button 
+                  onClick={() => downloadPDF('Conference brochure 2026.pdf', '/pdfs/Conference brochure 2026.pdf')}
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all transform hover:scale-105 shadow-lg cursor-pointer"
+                >
+                  Download Brochure
+                </button>
               </div>
             </div>
-            
-            <div className="flex justify-center">
-              <button 
-                onClick={() => downloadPDF('Conference brochure 2026.pdf', '/pdfs/Conference brochure 2026.pdf')}
-                className="inline-block bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg cursor-pointer"
-              >
-                Download Brochure
-              </button>
+
+            {/* PAST CONFERENCE SNAPS SECTION */}
+            <div className="col-span-1 md:col-span-12 mt-16">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Highlights from Previous Conferences</h3>
+              <div className="scroll-container h-48 bg-slate-900/30 rounded-lg overflow-hidden">
+                <div className="scroll-inner image-scroll">
+                  {[
+                    '/images/conference/tn_017A5816.JPG.jpeg',
+                    '/images/conference/tn_017A6058.JPG.jpeg',
+                    '/images/conference/tn_017A6069.JPG.jpeg',
+                    '/images/conference/tn_017A6139.JPG.jpeg',
+                    '/images/conference/tn_017A6276.JPG.jpeg',
+                    '/images/conference/tn_Conference photo.JPG.jpeg',
+                    '/images/conference/tn_RBP_6042.JPG.jpeg',
+                    '/images/conference/tn_RBP_6059.JPG.jpeg',
+                    '/images/conference/tn_RBP_6072.JPG.jpeg',
+                    '/images/conference/tn_RBP_6094.JPG.jpeg',
+                    '/images/conference/tn_RBP_6157.JPG.jpeg'
+                  ].map((img, idx) => (
+                    <div key={idx} className="rounded-lg overflow-hidden shadow-lg h-48 w-48 flex-shrink-0">
+                      <img 
+                        src={img} 
+                        alt={`Conference ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                  {/* Duplicate images for seamless infinite loop */}
+                  {[
+                    '/images/conference/tn_017A5816.JPG.jpeg',
+                    '/images/conference/tn_017A6058.JPG.jpeg',
+                    '/images/conference/tn_017A6069.JPG.jpeg',
+                    '/images/conference/tn_017A6139.JPG.jpeg',
+                    '/images/conference/tn_017A6276.JPG.jpeg',
+                    '/images/conference/tn_Conference photo.JPG.jpeg',
+                    '/images/conference/tn_RBP_6042.JPG.jpeg',
+                    '/images/conference/tn_RBP_6059.JPG.jpeg',
+                    '/images/conference/tn_RBP_6072.JPG.jpeg',
+                    '/images/conference/tn_RBP_6094.JPG.jpeg',
+                    '/images/conference/tn_RBP_6157.JPG.jpeg'
+                  ].map((img, idx) => (
+                    <div key={`duplicate-${idx}`} className="rounded-lg overflow-hidden shadow-lg h-48 w-48 flex-shrink-0">
+                      <img 
+                        src={img} 
+                        alt={`Conference ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
 
