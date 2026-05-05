@@ -13,14 +13,17 @@ const SectionTag = ({ children }: { children: React.ReactNode }) => (
   </span>
 );
 
-const Btn = ({ href, children, variant = 'primary', lg }: { href: string; children: React.ReactNode; variant?: 'primary' | 'outline' | 'outlineWhite'; lg?: boolean }) => {
+const Btn = ({ href, children, variant = 'primary', lg, download }: { href: string; children: React.ReactNode; variant?: 'primary' | 'outline' | 'outlineWhite'; lg?: boolean; download?: boolean }) => {
   const base = `inline-flex items-center gap-2 font-semibold rounded-xl transition-all duration-200 ${lg ? 'px-8 py-4 text-base' : 'px-6 py-3 text-sm'}`;
   const styles = {
     primary: { background: '#E87722', color: '#fff' },
     outline: { background: 'transparent', color: '#1B3A6B', border: '2px solid #1B3A6B' },
     outlineWhite: { background: 'transparent', color: '#fff', border: '2px solid rgba(255,255,255,.5)' },
   };
-  return <Link href={href} className={base} style={styles[variant]}>{children}</Link>;
+  const commonProps = { className: base, style: styles[variant] };
+  return download
+    ? <a href={href} download {...commonProps}>{children}</a>
+    : <Link href={href} {...commonProps}>{children}</Link>;
 };
 
 const services = [
@@ -83,6 +86,7 @@ export default function EdinzHomePage() {
           <div className="flex flex-wrap gap-4 fade-in-up delay-400">
             <Btn href="/edinz/services" variant="primary" lg>Explore Our Solutions →</Btn>
             <Btn href="/edinz/about#contact" variant="outlineWhite" lg>Book a Free Consultation</Btn>
+            <Btn href="/pdfs/Edinz_Tech_Company_Profile.pdf" variant="outlineWhite" lg download>Download Brochure</Btn>
           </div>
 
           {/* hero stats */}
