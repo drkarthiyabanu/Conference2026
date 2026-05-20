@@ -26,9 +26,11 @@ export async function POST(req: NextRequest) {
 
     // Email to admin
     const adminMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'karthiya@edinztech.com',
-      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+      from: `"Edinz Tech Website" <${process.env.EMAIL_USER}>`,
+      replyTo: `"${firstName} ${lastName}" <${email}>`,
+      to: process.env.EMAIL_TO,
+      subject: `Enquiry from ${firstName} ${lastName}${company ? ` — ${company}` : ''}`,
+      text: `New Enquiry — Edinz Tech\n\nName: ${firstName} ${lastName}\nEmail: ${email}${phone ? `\nPhone: ${phone}` : ''}${company ? `\nCompany: ${company}` : ''}${service ? `\nService: ${service}` : ''}\n\nMessage:\n${message}\n\n---\nSent from the contact form on edinztech.com`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1B3A6B;">New Contact Form Submission</h2>
@@ -42,7 +44,7 @@ export async function POST(req: NextRequest) {
             <p style="white-space: pre-wrap; background-color: #fff; padding: 15px; border-left: 3px solid #E87722;">${message}</p>
           </div>
           <p style="color: #6B7280; font-size: 12px; margin-top: 20px;">
-            This email was sent from the contact form on edinztech.com
+            Sent from the contact form on edinztech.com
           </p>
         </div>
       `,
@@ -50,9 +52,11 @@ export async function POST(req: NextRequest) {
 
     // Email to user (confirmation)
     const userMailOptions = {
-      from: process.env.EMAIL_USER,
+      from: `"Edinz Tech" <${process.env.EMAIL_USER}>`,
+      replyTo: `"Edinz Tech" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'We Received Your Message — Edinz Tech',
+      subject: `Hi ${firstName}, we received your enquiry`,
+      text: `Hi ${firstName},\n\nThank you for reaching out to Edinz Tech. We have received your message and will get back to you within 24 business hours.\n\nYour enquiry:\nService: ${service || 'Not specified'}\nMessage: ${message}\n\nBest regards,\nThe Edinz Tech Team\nwww.edinztech.com\n+91 44 6145 90000`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1B3A6B;">Thank You for Reaching Out!</h2>
