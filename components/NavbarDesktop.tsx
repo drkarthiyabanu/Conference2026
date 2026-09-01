@@ -60,6 +60,11 @@ const NavbarDesktop: React.FC<Props> = ({ links }) => {
             return;
         }
 
+         if (pathname.startsWith("/ignite")) {
+            setActiveLink("Ignite 2026");
+            return;
+        }
+
         if (pathname.startsWith("/contact")) {
             setActiveLink("Contact");
             return;
