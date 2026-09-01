@@ -14,6 +14,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Our Companies", href: "/companies" },
   { label: "Services", href: "/services" },
   { label: "Conference 2026", href: "/conference" },
+  { label: "Ignite 2026", href: "/ignite" },
   { label: "Contact", href: "/contact" },
 ];
 
