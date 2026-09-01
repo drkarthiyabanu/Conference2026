@@ -19,7 +19,12 @@ import {
   Globe,
   Trophy,
   ShieldCheck,
-  Building2
+  Building2,
+  Cpu,
+  Zap,
+  Layers,
+  Activity,
+  Network
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -38,99 +43,163 @@ const IgnitePage = () => {
       <div className="relative z-10">
         <Navbar />
 
-        {/* --- HERO SECTION --- */}
-        <section className="pt-36 pb-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold tracking-wider uppercase mb-8 shadow-sm backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5" />
-              Talent Hunt 2026
-            </div>
+        {/* --- HERO SECTION WITH ANIMATED RADAR DIAGRAM --- */}
+        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              {/* Left Column: Copy & Actions */}
+              <div className="lg:col-span-7 text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
+                  <Sparkles className="w-3.5 h-3.5 animate-pulse" />
+                  National Talent Hunt 2026
+                </div>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
-              INSPIRE <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-orange-400">IGNITE</span> 2026
-            </h1>
+                <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                  INSPIRE <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-orange-400">IGNITE</span> 2026
+                </h1>
 
-            {/* Tagline */}
-            <p className="text-xl sm:text-2xl font-medium text-slate-300 mb-3 tracking-tight">
-              Talent Hunt for Scalable Startup Ideas
-            </p>
-            <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              Bridging academic innovation and enterprise scalability. Where visionary student projects interface directly with industry leaders and capital partners.
-            </p>
+                <p className="text-lg sm:text-xl font-medium text-slate-300 mb-4">
+                  Talent Hunt for Scalable Startup Ideas
+                </p>
+                <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                  Where applied student engineering interfaces with enterprise architects and venture scouts on a synchronized stage.
+                </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <button
-                onClick={() => setSelectedModel('campus')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-md shadow-amber-500/20 hover:shadow-amber-500/30"
-              >
-                <GraduationCap className="w-4 h-4 text-slate-950" />
-                Campus to Corporate
-              </button>
-              <button
-                onClick={() => setSelectedModel('hybrid')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-all duration-200 shadow-sm"
-              >
-                <Globe className="w-4 h-4 text-slate-400" />
-                Hybrid Model
-              </button>
-            </div>
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+                  <button
+                    onClick={() => setSelectedModel('campus')}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-lg shadow-amber-500/20 group"
+                  >
+                    <GraduationCap className="w-4 h-4 text-slate-950 group-hover:rotate-12 transition-transform" />
+                    Campus to Corporate
+                  </button>
+                  <button
+                    onClick={() => setSelectedModel('hybrid')}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-all duration-200 group"
+                  >
+                    <Globe className="w-4 h-4 text-slate-400 group-hover:scale-110 transition-transform" />
+                    Hybrid Model
+                  </button>
+                </div>
+              </div>
 
-            {/* Rewards Banner */}
-            <div className="relative overflow-hidden rounded-2xl border border-amber-500/20 bg-gradient-to-br from-amber-500/10 via-slate-900/40 to-slate-900/80 p-6 sm:p-8 backdrop-blur-md max-w-3xl mx-auto">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
-                    <Trophy className="w-6 h-6 text-amber-400" />
+              {/* Right Column: Animated Architecture Diagram */}
+              <div className="lg:col-span-5 flex justify-center">
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center">
+                  {/* Concentric Pulse Rings */}
+                  <div className="absolute inset-0 rounded-full border border-amber-500/10 animate-ping [animation-duration:4s]" />
+                  <div className="absolute inset-6 rounded-full border border-amber-500/20" />
+                  <div className="absolute inset-16 rounded-full border border-dashed border-amber-500/30 animate-spin [animation-duration:20s]" />
+                  <div className="absolute inset-28 rounded-full bg-gradient-to-tr from-amber-500/20 to-orange-500/10 backdrop-blur-md border border-amber-500/40" />
+
+                  {/* Core Node */}
+                  <div className="relative z-10 w-16 h-16 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center shadow-lg shadow-amber-500/40">
+                    <Zap className="w-8 h-8 fill-slate-950 animate-bounce [animation-duration:2s]" />
                   </div>
-                  <div>
-                    <h2 className="text-lg font-bold text-white">Top 3 Teams Recognition</h2>
-                    <p className="text-sm text-slate-400">Award pool, mentorship access, and investor introduction</p>
+
+                  {/* Satellite Diagrammatic Badges */}
+                  <div className="absolute -top-2 bg-slate-900/90 border border-slate-700 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-xl animate-pulse">
+                    <Cpu className="w-3.5 h-3.5 text-amber-400" />
+                    <span className="text-xs font-mono text-slate-200">Tech Validated</span>
+                  </div>
+
+                  <div className="absolute -bottom-2 bg-slate-900/90 border border-slate-700 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-xl">
+                    <Briefcase className="w-3.5 h-3.5 text-amber-400" />
+                    <span className="text-xs font-mono text-slate-200">Investor Ready</span>
+                  </div>
+
+                  <div className="absolute -right-4 bg-slate-900/90 border border-slate-700 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-xl">
+                    <Activity className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="text-xs font-mono text-slate-200">Live Stage</span>
                   </div>
                 </div>
-                <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/30">
-                  Competitive Grant
-                </span>
               </div>
+
             </div>
           </div>
         </section>
 
-        {/* --- VALUE PROPOSITION / FEATURES --- */}
+        {/* --- INTERACTIVE DIAGRAMMATIC FEATURE CARDS --- */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 border-y border-slate-900 bg-slate-900/40">
           <div className="max-w-6xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">Program Architecture</h2>
+              <p className="text-sm text-slate-400">Structured pathways designed for high-impact project commercialization</p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   icon: Users,
-                  title: "Direct Industry Pitch",
-                  desc: "Present your architecture and business model directly to seasoned senior engineers."
+                  badge: "Direct Pitch",
+                  title: "Engineering Review",
+                  desc: "One-on-one evaluations with enterprise software architects and tech leads.",
+                  animatedNode: (
+                    <div className="flex gap-1 items-end h-4 mb-3">
+                      <span className="w-1 bg-amber-400 h-2 animate-pulse [animation-delay:0ms]" />
+                      <span className="w-1 bg-amber-400 h-4 animate-pulse [animation-delay:150ms]" />
+                      <span className="w-1 bg-amber-400 h-3 animate-pulse [animation-delay:300ms]" />
+                      <span className="w-1 bg-amber-400 h-1 animate-pulse [animation-delay:450ms]" />
+                    </div>
+                  )
                 },
                 {
-                  icon: Briefcase,
-                  title: "Capital Access",
-                  desc: "Connect directly with angel syndicates, mentors, and corporate incubators."
+                  icon: Network,
+                  badge: "Funding",
+                  title: "Venture Connect",
+                  desc: "Curated networking tracks with angel syndicates, accelerators, and tech mentors.",
+                  animatedNode: (
+                    <div className="flex items-center gap-1 mb-3">
+                      <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+                      <span className="w-6 h-0.5 bg-slate-700" />
+                      <span className="w-2 h-2 rounded-full bg-slate-500" />
+                      <span className="w-6 h-0.5 bg-slate-700" />
+                      <span className="w-2 h-2 rounded-full bg-amber-400" />
+                    </div>
+                  )
                 },
                 {
                   icon: Award,
-                  title: "Industry Credentialing",
-                  desc: "Verified certificates of merit and participation for professional profile enhancements."
+                  badge: "Credentialing",
+                  title: "Verified Honors",
+                  desc: "Accredited project certificates recognized across our partner technology network.",
+                  animatedNode: (
+                    <div className="relative w-6 h-4 mb-3 flex items-center">
+                      <div className="w-full h-0.5 bg-amber-500/30" />
+                      <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-amber-400 ring-4 ring-amber-500/20" />
+                    </div>
+                  )
                 },
                 {
-                  icon: FileText,
-                  title: "Direct Placement Tracks",
-                  desc: "Accelerated interview rounds and internship placements from corporate affiliates."
+                  icon: Briefcase,
+                  badge: "Talent Track",
+                  title: "Career Fast-Track",
+                  desc: "Direct-to-interview opportunities and internship slots at sponsor tech firms.",
+                  animatedNode: (
+                    <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 mb-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      PRIORITY HIRING
+                    </div>
+                  )
                 }
               ].map((feature, idx) => (
                 <div 
                   key={idx} 
-                  className="rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-slate-700 transition-all duration-200"
+                  className="relative group rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-amber-500/40 hover:bg-slate-900/90 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center mb-4 text-amber-400">
-                    <feature.icon className="w-5 h-5" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform">
+                      <feature.icon className="w-5 h-5" />
+                    </div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                      {feature.badge}
+                    </span>
                   </div>
+                  
+                  {feature.animatedNode}
+
                   <h3 className="text-base font-semibold text-white mb-2">{feature.title}</h3>
                   <p className="text-sm text-slate-400 leading-relaxed">{feature.desc}</p>
                 </div>
@@ -154,24 +223,30 @@ const IgnitePage = () => {
                 {
                   label: "Nomination Quota",
                   value: "3 Teams Maximum",
-                  detail: "Per accredited collegiate institution"
+                  detail: "Per accredited collegiate institution",
+                  diagram: "Quota: 3/College"
                 },
                 {
                   label: "Team Formation",
                   value: "1 - 3 Members",
-                  detail: "Cross-disciplinary teams permitted"
+                  detail: "Cross-disciplinary teams permitted",
+                  diagram: "Cap: 3 Persons"
                 },
                 {
                   label: "Cohort Capacity",
                   value: "Limited Intake",
-                  detail: "Evaluated on rolling submission quality"
+                  detail: "Evaluated on rolling submission quality",
+                  diagram: "Rolling Review"
                 }
               ].map((item, idx) => (
                 <div 
                   key={idx}
                   className="rounded-xl border border-slate-800 bg-slate-900/30 p-6 flex flex-col justify-between hover:border-amber-500/30 transition-colors duration-200"
                 >
-                  <p className="text-xs uppercase tracking-wider font-semibold text-amber-400 mb-2">{item.label}</p>
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-xs uppercase tracking-wider font-semibold text-amber-400">{item.label}</p>
+                    <span className="text-[10px] font-mono text-slate-500 border border-slate-800 rounded px-1.5 py-0.5">{item.diagram}</span>
+                  </div>
                   <h3 className="text-2xl font-bold text-white mb-1">{item.value}</h3>
                   <p className="text-xs text-slate-500">{item.detail}</p>
                 </div>
@@ -208,7 +283,7 @@ const IgnitePage = () => {
               </div>
 
               <div className="mt-10 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row justify-center gap-4">
-                <button className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-sm transition-colors duration-200">
+                <button className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-sm transition-colors duration-200 shadow-md">
                   Proceed to Application
                   <ArrowRight className="w-4 h-4" />
                 </button>
