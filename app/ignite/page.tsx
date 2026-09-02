@@ -41,7 +41,7 @@ const IgnitePage = () => {
     const visitorId = window.localStorage.getItem('visitor-count-id') || crypto.randomUUID();
     window.localStorage.setItem('visitor-count-id', visitorId);
 
-    fetch(`${API_URL}/api/visits`, {
+    void fetch(`${API_URL}/api/visits`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1017,7 +1017,7 @@ const IgnitePage = () => {
 
         <Footer />
 
-        <div className="fixed bottom-5 right-5 z-50 rounded-full border border-amber-400/40 bg-slate-900/95 px-4 py-2 text-sm font-semibold text-amber-300 shadow-lg shadow-black/30 backdrop-blur-sm">
+        <div className="fixed bottom-5 left-5 z-50 rounded-full border border-amber-400/40 bg-slate-900/95 px-4 py-2 text-sm font-semibold text-amber-300 shadow-lg shadow-black/30 backdrop-blur-sm">
           Visitor count: {visitorCount ?? '...'}
         </div>
       </div>
