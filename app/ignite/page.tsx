@@ -24,13 +24,15 @@ import {
   Zap,
   Layers,
   Activity,
-  Network
+  Network,
+  ChevronDown,
+  Clock
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 const IgnitePage = () => {
-  const [selectedModel, setSelectedModel] = useState<'campus' | 'hybrid' | null>(null);
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
@@ -43,320 +45,454 @@ const IgnitePage = () => {
       <div className="relative z-10">
         <Navbar />
 
-        {/* --- HERO SECTION WITH ANIMATED RADAR DIAGRAM --- */}
+        {/* --- HERO SECTION --- */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
-              {/* Left Column: Copy & Actions */}
-              <div className="lg:col-span-7 text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
-                  <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-                  National Talent Hunt 2026
-                </div>
-
-                <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
-                  INSPIRE <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-orange-400">IGNITE</span> 2026
-                </h1>
-
-                <p className="text-lg sm:text-xl font-medium text-slate-300 mb-4">
-                  Talent Hunt for Scalable Startup Ideas
-                </p>
-                <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-                  Where applied student engineering interfaces with enterprise architects and venture scouts on a synchronized stage.
-                </p>
-
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
-                  <button
-                    onClick={() => setSelectedModel('campus')}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-lg shadow-amber-500/20 group"
-                  >
-                    <GraduationCap className="w-4 h-4 text-slate-950 group-hover:rotate-12 transition-transform" />
-                    Campus to Corporate
-                  </button>
-                  <button
-                    onClick={() => setSelectedModel('hybrid')}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-all duration-200 group"
-                  >
-                    <Globe className="w-4 h-4 text-slate-400 group-hover:scale-110 transition-transform" />
-                    Hybrid Model
-                  </button>
-                </div>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
+                <Sparkles className="w-3.5 h-3.5 animate-pulse" />
+                Inter-college Startup Idea & Product Showcase
               </div>
 
-              {/* Right Column: Animated Architecture Diagram */}
-              <div className="lg:col-span-5 flex justify-center">
-                <div className="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center">
-                  {/* Concentric Pulse Rings */}
-                  <div className="absolute inset-0 rounded-full border border-amber-500/10 animate-ping [animation-duration:4s]" />
-                  <div className="absolute inset-6 rounded-full border border-amber-500/20" />
-                  <div className="absolute inset-16 rounded-full border border-dashed border-amber-500/30 animate-spin [animation-duration:20s]" />
-                  <div className="absolute inset-28 rounded-full bg-gradient-to-tr from-amber-500/20 to-orange-500/10 backdrop-blur-md border border-amber-500/40" />
+              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                INSPIRE <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-orange-400">IGNITE</span> 2026
+              </h1>
 
-                  {/* Core Node */}
-                  <div className="relative z-10 w-16 h-16 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center shadow-lg shadow-amber-500/40">
-                    <Zap className="w-8 h-8 fill-slate-950 animate-bounce [animation-duration:2s]" />
-                  </div>
+              <p className="text-xl sm:text-2xl font-semibold text-amber-300 mb-4">
+                Where student ideas meet industry and investors.
+              </p>
 
-                  {/* Satellite Diagrammatic Badges */}
-                  <div className="absolute -top-2 bg-slate-900/90 border border-slate-700 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-xl animate-pulse">
-                    <Cpu className="w-3.5 h-3.5 text-amber-400" />
-                    <span className="text-xs font-mono text-slate-200">Tech Validated</span>
-                  </div>
+              <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                An inter-college startup idea and product showcase, run by industry — not by a campus. Present your idea to founders, hiring managers and investors, and walk away with feedback that is worth more than a certificate.
+              </p>
 
-                  <div className="absolute -bottom-2 bg-slate-900/90 border border-slate-700 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-xl">
-                    <Briefcase className="w-3.5 h-3.5 text-amber-400" />
-                    <span className="text-xs font-mono text-slate-200">Investor Ready</span>
-                  </div>
-
-                  <div className="absolute -right-4 bg-slate-900/90 border border-slate-700 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-xl">
-                    <Activity className="w-3.5 h-3.5 text-emerald-400" />
-                    <span className="text-xs font-mono text-slate-200">Live Stage</span>
-                  </div>
-                </div>
+              {/* Key Details Strip */}
+              <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-6 mb-12 max-w-3xl mx-auto">
+                <p className="text-sm sm:text-base text-slate-300 space-y-2">
+                  <span className="block font-semibold text-amber-300">30 September 2026 — On campus, Olympia Auditorium, Chennai</span>
+                  <span className="block">1 October 2026 — Online</span>
+                  <span className="block text-amber-400 font-semibold">Registrations close 27 September 2026</span>
+                </p>
               </div>
 
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a 
+                  href="https://forms.gle/fgzDCKsVHqDsHEUB8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-lg shadow-amber-500/20 group"
+                >
+                  Register Your Team
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <button
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-all duration-200"
+                >
+                  <FileText className="w-4 h-4" />
+                  Download Rulebook
+                </button>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* --- INTERACTIVE DIAGRAMMATIC FEATURE CARDS --- */}
+        {/* --- ABOUT THE EVENT --- */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 border-y border-slate-900 bg-slate-900/40">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">About the Event</h2>
+            
+            <div className="space-y-6 text-slate-300 text-base leading-relaxed">
+              <p>
+                Most student ideas die in a submission folder. <span className="text-amber-300 font-semibold">INSPIRE IGNITE 2026</span> exists to change that.
+              </p>
+              
+              <p>
+                This is not a college competition run by a college. It is run by <span className="text-white font-semibold">Inspire Softech Group Companies</span> — a working technology consortium in Chennai that builds software, hires engineers and mentors students every week. That single difference changes what you get out of it. <span className="text-amber-300">The people judging your idea are the people who fund, build and hire in the real market.</span>
+              </p>
+
+              <p>
+                Bring an idea, a prototype, a working product or a business model. You get <span className="text-amber-300 font-semibold">seven minutes on the stage</span>, direct feedback from an industry jury, and a room full of people worth knowing. Teams that impress us do not just win a prize — they get a conversation about internships and, where the idea has legs, a longer relationship with our group.
+              </p>
+
+              <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-amber-400 font-bold text-lg">Open Theme</p>
+                  <p className="text-xs text-slate-400 mt-2">Any domain, any idea stage</p>
+                </div>
+                <div>
+                  <p className="text-amber-400 font-bold text-lg">All Colleges</p>
+                  <p className="text-xs text-slate-400 mt-2">Three teams per college</p>
+                </div>
+                <div>
+                  <p className="text-amber-400 font-bold text-lg">Up to 3 Members</p>
+                  <p className="text-xs text-slate-400 mt-2">Per team, one fee</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* --- WHY TAKE PART --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center max-w-2xl mx-auto mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">Program Architecture</h2>
-              <p className="text-sm text-slate-400">Structured pathways designed for high-impact project commercialization</p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Why Take Part</h2>
+              <p className="text-slate-400 text-lg">Six compelling reasons to join INSPIRE IGNITE 2026</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   icon: Users,
-                  badge: "Direct Pitch",
-                  title: "Engineering Review",
-                  desc: "One-on-one evaluations with enterprise software architects and tech leads.",
-                  animatedNode: (
-                    <div className="flex gap-1 items-end h-4 mb-3">
-                      <span className="w-1 bg-amber-400 h-2 animate-pulse [animation-delay:0ms]" />
-                      <span className="w-1 bg-amber-400 h-4 animate-pulse [animation-delay:150ms]" />
-                      <span className="w-1 bg-amber-400 h-3 animate-pulse [animation-delay:300ms]" />
-                      <span className="w-1 bg-amber-400 h-1 animate-pulse [animation-delay:450ms]" />
-                    </div>
-                  )
+                  title: "Present to Industry and Investors",
+                  desc: "Your jury is made up of founders, senior engineers and investors — not only academics. The feedback is commercial, direct and immediately useful."
                 },
                 {
-                  icon: Network,
-                  badge: "Funding",
-                  title: "Venture Connect",
-                  desc: "Curated networking tracks with angel syndicates, accelerators, and tech mentors.",
-                  animatedNode: (
-                    <div className="flex items-center gap-1 mb-3">
-                      <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-                      <span className="w-6 h-0.5 bg-slate-700" />
-                      <span className="w-2 h-2 rounded-full bg-slate-500" />
-                      <span className="w-6 h-0.5 bg-slate-700" />
-                      <span className="w-2 h-2 rounded-full bg-amber-400" />
-                    </div>
-                  )
-                },
-                {
-                  icon: Award,
-                  badge: "Credentialing",
-                  title: "Verified Honors",
-                  desc: "Accredited project certificates recognized across our partner technology network.",
-                  animatedNode: (
-                    <div className="relative w-6 h-4 mb-3 flex items-center">
-                      <div className="w-full h-0.5 bg-amber-500/30" />
-                      <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-amber-400 ring-4 ring-amber-500/20" />
-                    </div>
-                  )
+                  icon: Trophy,
+                  title: "Cash Prizes Worth ₹30,000",
+                  desc: "A prize pool of ₹30,000 — ₹15,000 awarded on each day, so offline and online teams compete for their own set of prizes. Special recognition awards for Best Prototype, Best Social Impact Idea and Best Presentation."
                 },
                 {
                   icon: Briefcase,
-                  badge: "Talent Track",
-                  title: "Career Fast-Track",
-                  desc: "Direct-to-interview opportunities and internship slots at sponsor tech firms.",
-                  animatedNode: (
-                    <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      PRIORITY HIRING
-                    </div>
-                  )
-                }
-              ].map((feature, idx) => (
-                <div 
-                  key={idx} 
-                  className="relative group rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-amber-500/40 hover:bg-slate-900/90 transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform">
-                      <feature.icon className="w-5 h-5" />
-                    </div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-                      {feature.badge}
-                    </span>
-                  </div>
-                  
-                  {feature.animatedNode}
-
-                  <h3 className="text-base font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{feature.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* --- CRITICAL PARTICIPATION GUIDELINES --- */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-3">
-                Key Participation Metrics
-              </h2>
-              <p className="text-sm text-slate-400">Strict eligibility guidelines apply across all participating institutions</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  label: "Nomination Quota",
-                  value: "3 Teams Maximum",
-                  detail: "Per accredited collegiate institution",
-                  diagram: "Quota: 3/College"
+                  title: "Internship Opportunities",
+                  desc: "Shortlisted participants are considered for structured internships across Inspire Softech Group Companies and our partner network."
                 },
                 {
-                  label: "Team Formation",
-                  value: "1 - 3 Members",
-                  detail: "Cross-disciplinary teams permitted",
-                  diagram: "Cap: 3 Persons"
+                  icon: Network,
+                  title: "Industry Connections",
+                  desc: "Networking built into the day, with executive lunch and high tea alongside industry professionals and investors."
                 },
                 {
-                  label: "Cohort Capacity",
-                  value: "Limited Intake",
-                  detail: "Evaluated on rolling submission quality",
-                  diagram: "Rolling Review"
+                  icon: Award,
+                  title: "E-certificates for Everyone",
+                  desc: "Every registered participant — online and offline, presenting and attending — receives a digital certificate."
+                },
+                {
+                  icon: Zap,
+                  title: "Visibility for Your Idea",
+                  desc: "Winning and standout ideas are featured across our channels and shared with our industry network."
                 }
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className="rounded-xl border border-slate-800 bg-slate-900/30 p-6 flex flex-col justify-between hover:border-amber-500/30 transition-colors duration-200"
+                  className="rounded-xl border border-slate-800 bg-slate-900/60 p-8 hover:border-amber-500/40 hover:bg-slate-900/90 transition-all duration-300"
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="text-xs uppercase tracking-wider font-semibold text-amber-400">{item.label}</p>
-                    <span className="text-[10px] font-mono text-slate-500 border border-slate-800 rounded px-1.5 py-0.5">{item.diagram}</span>
+                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-6 text-amber-400">
+                    <item.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-1">{item.value}</h3>
-                  <p className="text-xs text-slate-500">{item.detail}</p>
+                  <h3 className="text-lg font-semibold text-white mb-3">{item.title}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* --- REGISTRATION MILESTONES --- */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/50 border-t border-slate-900">
-          <div className="max-w-5xl mx-auto">
-            <div className="rounded-2xl border border-slate-800 bg-slate-950 p-8 sm:p-10 shadow-2xl">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
-                <div className="md:border-r border-slate-800 md:pr-6">
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Status</span>
-                  <div className="mt-1.5 flex items-center justify-center gap-2">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                    </span>
-                    <span className="text-xl font-bold text-white tracking-wide">REGISTRATION OPEN</span>
+        {/* --- EVENT FORMAT (HYBRID) --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Event Format — Hybrid</h2>
+              <p className="text-slate-400 text-lg">INSPIRE IGNITE 2026 runs over two days with equal opportunities on both</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              {/* Day 1 */}
+              <div className="rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 to-orange-500/5 p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400">
+                    <Calendar className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Day 1</h3>
+                    <p className="text-amber-300 font-semibold">Wednesday, 30 September 2026</p>
                   </div>
                 </div>
 
-                <div className="md:border-r border-slate-800 md:pr-6">
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Submissions Open</span>
-                  <p className="text-xl font-bold text-slate-200 mt-1.5">Sep 01, 2026</p>
-                </div>
+                <h4 className="text-lg font-semibold text-white mb-4">On Campus — Olympia Auditorium</h4>
+                <p className="text-slate-300 text-sm mb-6 leading-relaxed">
+                  Olympia Technology Park, Guindy, Chennai 600 032. Live presentations before the jury and audience, executive lunch, high tea, networking, and the prize ceremony the same evening.
+                </p>
 
-                <div>
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Event Timeline</span>
-                  <p className="text-xl font-bold text-amber-400 mt-1.5">Sep 30, 2026</p>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Live presentations before the jury and audience</span>
+                  </div>
+                  <div className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Executive lunch and high tea</span>
+                  </div>
+                  <div className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Networking with industry professionals</span>
+                  </div>
+                  <div className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Prize ceremony the same evening</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-10 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row justify-center gap-4">
-                <button className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-sm transition-colors duration-200 shadow-md">
-                  Proceed to Application
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+              {/* Day 2 */}
+              <div className="rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
+                    <Globe className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Day 2</h3>
+                    <p className="text-blue-300 font-semibold">Thursday, 1 October 2026</p>
+                  </div>
+                </div>
+
+                <h4 className="text-lg font-semibold text-white mb-4">Online — Google Meet</h4>
+                <p className="text-slate-300 text-sm mb-6 leading-relaxed">
+                  Live virtual presentations for teams unable to travel to Chennai, judged by the same panel against the same criteria. Results are announced at the end of the session.
+                </p>
+
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Live virtual presentations on Google Meet</span>
+                  </div>
+                  <div className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Same jury, same judging criteria</span>
+                  </div>
+                  <div className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Results announced same day</span>
+                  </div>
+                  <div className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Equal opportunities and prizes</span>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            <div className="mt-10 p-6 bg-slate-950/60 border border-slate-800 rounded-lg text-center text-sm text-slate-300">
+              <p><span className="text-amber-400 font-semibold">Both modes face the same jury</span> and the same judging criteria. Each day carries its own set of prizes — so online teams compete against online teams, not against the auditorium.</p>
             </div>
           </div>
         </section>
 
-        {/* --- CORPORATE & CONTACT DIRECTORY --- */}
+        {/* --- WHO CAN PARTICIPATE --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Who Can Participate</h2>
+
+            <div className="space-y-4">
+              {[
+                "Students currently enrolled in any recognised college or university. All disciplines welcome — this is not an engineering-only event.",
+                "Recent graduates are also eligible.",
+                "A maximum of three teams per college.",
+                "Each team may have up to three members. Solo entries and two-member teams are permitted; the fee is the same.",
+                "Cross-department teams from the same college are encouraged.",
+                "An individual may be part of only one team."
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-4 p-4 rounded-lg bg-slate-900/40 border border-slate-800 hover:border-amber-500/30 transition-colors">
+                  <div className="w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="text-xs font-bold text-amber-400">{idx + 1}</span>
+                  </div>
+                  <p className="text-slate-300 text-base">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* --- WHAT YOU CAN PRESENT --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">What You Can Present</h2>
+            <p className="text-center text-slate-400 text-lg mb-12">Open theme — there are no fixed tracks. Bring anything at any stage of maturity, as long as it is your own work:</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Startup Idea",
+                  desc: "A clear problem and a proposed solution"
+                },
+                {
+                  title: "Prototype or MVP",
+                  desc: "A working prototype or minimum viable product"
+                },
+                {
+                  title: "Launched Product",
+                  desc: "A product with early users"
+                },
+                {
+                  title: "Research Project",
+                  desc: "With commercial potential"
+                },
+                {
+                  title: "Social Enterprise",
+                  desc: "Or sustainability solution"
+                },
+                {
+                  title: "Your Unique Vision",
+                  desc: "If it fits the spirit of the event"
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 hover:border-amber-500/30 transition-colors">
+                  <h4 className="text-amber-400 font-semibold mb-2">{item.title}</h4>
+                  <p className="text-slate-400 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* --- REGISTRATION FEES TABLE --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center">Registration Fees</h2>
+            <p className="text-center text-slate-400 mb-12 text-base">Presenting fees are per team, not per member — one fee covers up to three members. All fees are inclusive of applicable taxes and are non-refundable once registration is confirmed.</p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-800">
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Category</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Fee</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">What is Included</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Presenting Team — Offline</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold">₹799</td>
+                    <td className="py-6 px-6 text-slate-300">Stage slot on 30 September for up to 3 members, executive lunch, high tea, networking access, e-certificates, participation in prizes and internship shortlisting</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Presenting Team — Online</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold">₹499</td>
+                    <td className="py-6 px-6 text-slate-300">Virtual presentation slot on 1 October for up to 3 members, e-certificates, participation in prizes and internship shortlisting</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Attendee Pass — Offline</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold">₹599</td>
+                    <td className="py-6 px-6 text-slate-300">Full-day access on 30 September as audience, executive lunch, high tea, networking access, e-certificate</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p className="text-center text-slate-400 text-sm mt-6">Payments are collected through Razorpay. Registration is complete only when the fee is paid and a confirmation email has been received.</p>
+          </div>
+        </section>
+
+        {/* --- KEY DATES TABLE --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Key Dates</h2>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-800">
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Milestone</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Date</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Notes</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Registrations Open</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">1 September 2026</td>
+                    <td className="py-4 px-6 text-slate-300">Online at inspiresoftechgroup.com/ignite</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Registration Closes</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">27 September 2026</td>
+                    <td className="py-4 px-6 text-slate-300">No entries accepted after this date</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Presentation Deck Submission</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">28 September 2026</td>
+                    <td className="py-4 px-6 text-slate-300">PDF or PPT, emailed to projects@edinztech.com</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Offline Event</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">30 September 2026</td>
+                    <td className="py-4 px-6 text-slate-300">Olympia Auditorium, Guindy, Chennai</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Online Event</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">1 October 2026</td>
+                    <td className="py-4 px-6 text-slate-300">Live on Google Meet</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Results & Certificates</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">30 Sep & 1 Oct 2026</td>
+                    <td className="py-4 px-6 text-slate-300">Announced on event day; all e-certificates by 1 October</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* --- EVENT SCHEDULE --- */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Entity Overview */}
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-8 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                      <Building2 className="w-5 h-5 text-amber-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-bold text-white">Inspire Softech Group</h3>
-                      <p className="text-xs text-slate-400">Institutional Event Organizer</p>
-                    </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Event Schedule</h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Day 1 Schedule */}
+              <div>
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold text-amber-300 mb-6">Day 1 — 30 September 2026</h3>
+                  <p className="text-slate-400 text-sm mb-6">Olympia Auditorium</p>
+                  
+                  <div className="space-y-3">
+                    {[
+                      { time: "08:30 – 09:30", session: "Registration, check-in and team briefing" },
+                      { time: "09:30 – 10:00", session: "Inauguration and opening address" },
+                      { time: "10:00 – 13:00", session: "Team presentations — Round 1" },
+                      { time: "13:00 – 14:00", session: "Executive lunch" },
+                      { time: "14:00 – 16:00", session: "Team presentations — Round 2" },
+                      { time: "16:00 – 16:45", session: "High tea and networking" },
+                      { time: "16:45 – 17:15", session: "Jury deliberation · Industry address" },
+                      { time: "17:15 – 18:00", session: "Results, prize distribution and valedictory" }
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex gap-4 p-4 rounded-lg border border-slate-800 hover:border-amber-500/30 transition-colors">
+                        <div className="flex items-center gap-2 text-amber-400 font-semibold text-sm min-w-fit">
+                          <Clock className="w-4 h-4" />
+                          {item.time}
+                        </div>
+                        <p className="text-slate-300 text-sm">{item.session}</p>
+                      </div>
+                    ))}
                   </div>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-6">
-                    An enterprise initiative dedicated to bridging applied innovation, student engineering excellence, and scalable venture capital.
-                  </p>
-                </div>
-                <div className="pt-6 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-500">
-                  <span>Authorized Collegiate Program</span>
-                  <ShieldCheck className="w-4 h-4 text-amber-400" />
                 </div>
               </div>
 
-              {/* Communication Channels */}
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-8">
-                <h3 className="text-base font-bold text-white mb-6">Inquiries & Program Secretariat</h3>
-                <div className="space-y-4 text-sm">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-1" />
-                    <span className="text-slate-300">Olympia Technology Park, Guindy, Chennai, India</span>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                    <div className="flex items-center gap-2">
-                      <a href="tel:+919360505768" className="text-slate-300 hover:text-white transition-colors">
-                        +91 93605 05768
-                      </a>
-                      <span className="text-slate-600">•</span>
-                      <a href="tel:+918667493679" className="text-slate-300 hover:text-white transition-colors">
-                        +91 86674 93679
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                    <a href="mailto:Projects@edinztech.com" className="text-slate-300 hover:text-white transition-colors">
-                      Projects@edinztech.com
-                    </a>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <ExternalLink className="w-4 h-4 text-amber-400 shrink-0" />
-                    <a 
-                      href="https://inspiresoftechgroup.com/ignite" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center gap-1 transition-colors"
-                    >
-                      inspiresoftechgroup.com/ignite
-                    </a>
+              {/* Day 2 Schedule */}
+              <div>
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold text-blue-300 mb-6">Day 2 — 1 October 2026</h3>
+                  <p className="text-slate-400 text-sm mb-6">Online (Google Meet)</p>
+                  
+                  <div className="space-y-3">
+                    {[
+                      { time: "09:30 – 10:00", session: "Virtual lobby opens, technical check for all teams" },
+                      { time: "10:00 – 13:00", session: "Online presentations — Round 1" },
+                      { time: "14:00 – 16:00", session: "Online presentations — Round 2" },
+                      { time: "16:00 – 16:45", session: "Jury feedback session" },
+                      { time: "17:00", session: "Results announced" }
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex gap-4 p-4 rounded-lg border border-slate-800 hover:border-blue-500/30 transition-colors">
+                        <div className="flex items-center gap-2 text-blue-400 font-semibold text-sm min-w-fit">
+                          <Clock className="w-4 h-4" />
+                          {item.time}
+                        </div>
+                        <p className="text-slate-300 text-sm">{item.session}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -364,85 +500,437 @@ const IgnitePage = () => {
           </div>
         </section>
 
-        {/* --- MODEL SELECTION MODAL --- */}
-        {selectedModel && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-            <div className="relative w-full max-w-lg rounded-2xl border border-slate-800 bg-slate-900 p-6 sm:p-8 shadow-2xl">
-              <button
-                onClick={() => setSelectedModel(null)}
-                aria-label="Close dialog"
-                className="absolute top-5 right-5 p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
+        {/* --- JUDGING CRITERIA --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center">Judging Criteria</h2>
+            <p className="text-center text-slate-400 mb-12 text-base">Every team, online and offline, is judged by the same panel against the same four criteria, each carrying 25 marks.</p>
 
-              {selectedModel === 'campus' ? (
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-                      <GraduationCap className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white">Campus to Corporate</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-800">
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Criterion</th>
+                    <th className="text-center py-4 px-6 font-semibold text-amber-400 w-20">Weight</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">What the Jury is Looking For</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Problem Clarity</td>
+                    <td className="py-6 px-6 text-center text-amber-400 font-bold">25</td>
+                    <td className="py-6 px-6 text-slate-300">Is the problem real, specific and worth solving? Do you know who has it?</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Innovation</td>
+                    <td className="py-6 px-6 text-center text-amber-400 font-bold">25</td>
+                    <td className="py-6 px-6 text-slate-300">What is genuinely new here, and why has nobody solved it this way already?</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Feasibility</td>
+                    <td className="py-6 px-6 text-center text-amber-400 font-bold">25</td>
+                    <td className="py-6 px-6 text-slate-300">Can this actually be built and run with realistic resources? How far have you got?</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Impact and Business Potential</td>
+                    <td className="py-6 px-6 text-center text-amber-400 font-bold">25</td>
+                    <td className="py-6 px-6 text-slate-300">Who pays, who benefits, and how big can this become?</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-8 p-6 bg-slate-950/60 border border-slate-800 rounded-lg text-center text-sm text-slate-300">
+              <p><span className="text-amber-400 font-semibold">How well you present</span> is not scored separately, but it decides whether the jury understands the other four. Seven minutes is short — <span className="text-amber-300">rehearse it.</span></p>
+            </div>
+          </div>
+        </section>
+
+        {/* --- PRIZES AND RECOGNITION --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center">Prizes and Recognition</h2>
+            <p className="text-center text-slate-400 mb-12 text-base">A total prize pool of ₹30,000, split equally across the two days. Offline and online teams each compete for their own set of prizes.</p>
+
+            <div className="overflow-x-auto mb-12">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-800">
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Award</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Prize</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Awarded On</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  <tr className="hover:bg-slate-900/30 transition-colors bg-gradient-to-r from-amber-500/10 to-transparent">
+                    <td className="py-6 px-6 text-white font-bold">Winner — Offline</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold">₹10,000 + Trophy</td>
+                    <td className="py-6 px-6 text-slate-300">30 September 2026</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Runner-up — Offline</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold">₹5,000</td>
+                    <td className="py-6 px-6 text-slate-300">30 September 2026</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors bg-gradient-to-r from-blue-500/10 to-transparent">
+                    <td className="py-6 px-6 text-white font-bold">Winner — Online</td>
+                    <td className="py-6 px-6 text-blue-400 font-bold">₹10,000 + Trophy</td>
+                    <td className="py-6 px-6 text-slate-300">1 October 2026</td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Runner-up — Online</td>
+                    <td className="py-6 px-6 text-blue-400 font-bold">₹5,000</td>
+                    <td className="py-6 px-6 text-slate-300">1 October 2026</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-8">
+              <h3 className="text-lg font-bold text-amber-300 mb-6">Special Recognition Awards</h3>
+              <p className="text-slate-400 text-sm mb-4">Presented on both days, in addition to the cash prizes:</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex items-start gap-3">
+                  <Trophy className="w-5 h-5 text-amber-400 shrink-0 mt-1" />
+                  <span className="text-slate-300">Best Prototype</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Trophy className="w-5 h-5 text-amber-400 shrink-0 mt-1" />
+                  <span className="text-slate-300">Best Social Impact Idea</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Trophy className="w-5 h-5 text-amber-400 shrink-0 mt-1" />
+                  <span className="text-slate-300">Best Presentation</span>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-slate-700">
+                <h4 className="text-amber-300 font-semibold mb-4">Beyond the Prizes</h4>
+                <div className="space-y-3 text-sm text-slate-300">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Internship offers for shortlisted participants across Inspire Softech Group Companies</span>
                   </div>
-                  
-                  <p className="text-sm text-slate-400 leading-relaxed mb-6">
-                    A comprehensive on-site pitching track structured to interface promising student innovators directly with corporate leadership, technology architects, and venture scouts.
-                  </p>
-
-                  <div className="rounded-xl bg-slate-950/60 border border-slate-800 p-4 space-y-2.5">
-                    {[
-                      "Direct engagement with enterprise engineering mentors",
-                      "Formal closed-room pitch sessions",
-                      "Actionable technical and business model feedback",
-                      "Priority fast-track internship evaluations"
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>E-certificates for every registered participant</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>Mentorship conversations for ideas worth taking further</span>
                   </div>
                 </div>
-              ) : (
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-                      <Globe className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white">Hybrid Participation Model</h3>
-                  </div>
-
-                  <p className="text-sm text-slate-400 leading-relaxed mb-6">
-                    Flexible remote and in-person participation pathways designed for teams outside regional hubs, retaining the same rigorous evaluation standards.
-                  </p>
-
-                  <div className="rounded-xl bg-slate-950/60 border border-slate-800 p-4 space-y-2.5">
-                    {[
-                      "Remote digital presentation capabilities",
-                      "National audience and investor visibility",
-                      "Scheduled asynchronous and live feedback sessions",
-                      "Access to virtual industry advisory networks"
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div className="mt-8">
-                <button
-                  onClick={() => setSelectedModel(null)}
-                  className="w-full py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-colors"
-                >
-                  Dismiss Overview
-                </button>
               </div>
             </div>
           </div>
-        )}
+        </section>
+
+        {/* --- VENUE --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Venue</h2>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-10">
+              <h3 className="text-2xl font-bold text-amber-300 mb-4">Olympia Auditorium</h3>
+              <p className="text-white font-semibold mb-6">Olympia Technology Park, Guindy, Chennai 600 032</p>
+              
+              <p className="text-slate-300 text-base leading-relaxed mb-8">
+                The venue is close to Guindy railway station and the Guindy metro station, and is well connected by bus. Detailed directions are shared with registered teams by email before the event.
+              </p>
+
+              <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-6">
+                <p className="text-slate-400 text-sm text-center">
+                  🗺️ <span className="text-amber-300">Google Map embedding and detailed directions coming soon</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* --- ABOUT THE ORGANISER --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">About the Organiser</h2>
+
+            <div className="space-y-6 text-slate-300 text-base leading-relaxed">
+              <p>
+                <span className="text-amber-300 font-semibold">Inspire Softech Group Companies</span> is a Chennai-based technology consortium that bridges academia, research and industry. The group operates several brands — including Inspire Softech Solutions, Edinz Tech Private Limited, Adore Technology Solutions and iGreen StarTech Solutions — across software development, technology training, industry internships and academic partnerships.
+              </p>
+
+              <p>
+                The group works with colleges across Tamil Nadu through memoranda of understanding, structured internships, industry-mentored projects, industrial visits and placement readiness programmes. <span className="text-amber-300 font-semibold">INSPIRE IGNITE 2026</span> is an extension of that work: an industry-run platform where student ideas are evaluated by the people who actually build and fund products.
+              </p>
+
+              <div className="bg-slate-900/40 border border-slate-800 rounded-lg p-8 mt-8">
+                <p className="font-semibold text-white mb-2">Led by</p>
+                <p className="text-amber-300 font-bold text-lg">Dr. Karthiya Banu</p>
+                <p className="text-slate-400">Founder & CEO, with over two decades of combined experience across academia and the corporate sector</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* --- FREQUENTLY ASKED QUESTIONS --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+
+            <div className="space-y-4">
+              {[
+                {
+                  q: "Do I need a working product to participate?",
+                  a: "No. An idea with a clearly defined problem and solution is enough. A prototype or working product strengthens your case on feasibility, but ideas are welcome and judged fairly."
+                },
+                {
+                  q: "Is there a fixed theme?",
+                  a: "No. INSPIRE IGNITE 2026 runs on an open theme — bring an idea from any domain."
+                },
+                {
+                  q: "Can students from different departments form one team?",
+                  a: "Yes, and we encourage it. A team with a mix of technical and business thinking usually presents better."
+                },
+                {
+                  q: "Are recent graduates eligible?",
+                  a: "Yes. Recent graduates may participate alongside currently enrolled students."
+                },
+                {
+                  q: "Is the fee per person or per team?",
+                  a: "Presenting fees are per team — one fee covers up to three members. The attendee pass is per person."
+                },
+                {
+                  q: "What if only two of us want to present?",
+                  a: "That is fine. Teams of one, two or three all pay the same fee."
+                },
+                {
+                  q: "Can our college send more than three teams?",
+                  a: "No. Three teams per college is a firm limit, so that the day stays fair to smaller colleges."
+                },
+                {
+                  q: "I want to attend but not present. Can I?",
+                  a: "Yes. The offline attendee pass is ₹599 and gives you full access to the day, including executive lunch, high tea, the networking session and an e-certificate."
+                },
+                {
+                  q: "Will online teams be judged differently?",
+                  a: "No. The same jury applies the same four criteria to both days. Each day has its own set of prizes, and results are declared on the day you present."
+                },
+                {
+                  q: "Are the prizes the same for online and offline teams?",
+                  a: "Yes. Each day carries an identical set — a winner's prize of ₹10,000 and a runner-up prize of ₹5,000, plus the three special recognition awards. Online teams compete only against other online teams."
+                },
+                {
+                  q: "How do I pay?",
+                  a: "Registration is through an online form, and payment is completed through a Razorpay link issued at the end of it."
+                },
+                {
+                  q: "Will you take ownership of our idea?",
+                  a: "No. You retain complete ownership of your intellectual property. Please do not present anything you consider confidential, as the event is public."
+                },
+                {
+                  q: "Is the registration fee refundable?",
+                  a: "No. Fees are non-refundable and non-transferable once registration is confirmed."
+                },
+                {
+                  q: "Will we get a certificate?",
+                  a: "Yes. Every registered participant receives an e-certificate, whether presenting or attending, online or offline."
+                }
+              ].map((faq, idx) => (
+                <div key={idx}>
+                  <button
+                    onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
+                    className="w-full text-left p-6 bg-slate-900/60 border border-slate-800 rounded-lg hover:border-amber-500/30 hover:bg-slate-900/90 transition-all duration-200 flex items-center justify-between"
+                  >
+                    <h4 className="font-semibold text-white text-base">{faq.q}</h4>
+                    <ChevronDown className={`w-5 h-5 text-amber-400 transition-transform ${expandedFAQ === idx ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {expandedFAQ === idx && (
+                    <div className="p-6 bg-slate-950/60 border border-slate-800 border-t-0 rounded-b-lg text-slate-300 text-base leading-relaxed">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* --- REGISTRATION AND PAYMENT --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center">Registration & Payment</h2>
+            <p className="text-center text-slate-400 mb-12 text-base">Complete your registration through our secure online form</p>
+
+            <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/30 rounded-2xl p-10 mb-12">
+              <h3 className="text-2xl font-bold text-amber-300 mb-6 text-center">Google Registration Form</h3>
+              <div className="text-center mb-8">
+                <p className="text-slate-300 mb-6">Click below to start your registration</p>
+                <a 
+                  href="https://forms.gle/fgzDCKsVHqDsHEUB8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-semibold text-base transition-all duration-200 shadow-lg shadow-amber-500/20 group"
+                >
+                  Open Registration Form
+                  <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-800">
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Category</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Fee</th>
+                    <th className="text-left py-4 px-6 font-semibold text-amber-400">Payment Link</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Offline Presenting Team</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold">₹799 per team</td>
+                    <td className="py-6 px-6">
+                      <a href="https://rzp.io/rzp/joD2Na9" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center gap-1">
+                        Pay Now <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Online Presenting Team</td>
+                    <td className="py-6 px-6 text-blue-400 font-bold">₹499 per team</td>
+                    <td className="py-6 px-6">
+                      <a href="https://rzp.io/rzp/joD2Na9" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-1">
+                        Pay Now <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-900/30 transition-colors">
+                    <td className="py-6 px-6 text-white font-semibold">Offline Attendee Pass</td>
+                    <td className="py-6 px-6 text-green-400 font-bold">₹599 per person</td>
+                    <td className="py-6 px-6">
+                      <a href="https://rzp.io/rzp/R6SHgE9e" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 font-medium inline-flex items-center gap-1">
+                        Pay Now <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* --- CONTACT & CLOSING CALL TO ACTION --- */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/5 border border-amber-500/30 rounded-2xl p-10 sm:p-14 mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center">
+                Registrations close on 27 September 2026
+              </h2>
+              <p className="text-xl text-amber-300 font-semibold text-center mb-8">
+                Three teams per college. Seven minutes each. Make them count.
+              </p>
+              <div className="text-center">
+                <a 
+                  href="https://forms.gle/fgzDCKsVHqDsHEUB8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-semibold text-base transition-all duration-200 shadow-lg shadow-amber-500/20 group"
+                >
+                  Register Your Team Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              {/* Contact Info */}
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-10">
+                <h3 className="text-2xl font-bold text-white mb-8">Contact Us</h3>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 mt-1">
+                      <MapPin className="w-5 h-5 text-amber-400" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Venue</p>
+                      <p className="text-white font-semibold mt-1">Olympia Technology Park, Guindy, Chennai 600 032</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-amber-400" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Phone</p>
+                      <div className="flex items-center gap-3 mt-1">
+                        <a href="tel:+919360505768" className="text-white hover:text-amber-300 transition-colors">
+                          +91 93605 05768
+                        </a>
+                        <span className="text-slate-600">•</span>
+                        <a href="tel:+918667493679" className="text-white hover:text-amber-300 transition-colors">
+                          +91 86674 93679
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                      <Mail className="w-5 h-5 text-amber-400" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Email</p>
+                      <a href="mailto:projects@edinztech.com" className="text-white hover:text-amber-300 transition-colors mt-1">
+                        projects@edinztech.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                      <Globe className="w-5 h-5 text-amber-400" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Web</p>
+                      <a href="https://inspiresoftechgroup.com/ignite" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-medium transition-colors mt-1">
+                        inspiresoftechgroup.com/ignite
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Organization Info */}
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-10">
+                <h3 className="text-2xl font-bold text-white mb-8">Inspire Softech Group</h3>
+                
+                <p className="text-slate-300 text-base leading-relaxed mb-8">
+                  Inspire Softech Group Companies is a Chennai-based technology consortium bridging academia, research and industry.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-lg">
+                    <p className="text-xs font-semibold text-amber-400 uppercase tracking-wider">Founded by</p>
+                    <p className="text-white font-bold mt-2">Dr. Karthiya Banu</p>
+                    <p className="text-xs text-slate-400 mt-1">Founder & CEO</p>
+                  </div>
+
+                  <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-lg">
+                    <p className="text-xs font-semibold text-amber-400 uppercase tracking-wider">Operating Companies</p>
+                    <p className="text-slate-300 text-sm mt-2">
+                      • Inspire Softech Solutions<br/>
+                      • Edinz Tech Private Limited<br/>
+                      • Adore Technology Solutions<br/>
+                      • iGreen StarTech Solutions
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <Footer />
       </div>
