@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Award,
   Users,
@@ -31,8 +31,31 @@ import {
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.adoretech.cloud';
+
 const IgnitePage = () => {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    const visitorId = window.localStorage.getItem('visitor-count-id') || crypto.randomUUID();
+    window.localStorage.setItem('visitor-count-id', visitorId);
+
+    fetch(`${API_URL}/api/visits`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Visitor-Id': visitorId,
+      },
+      credentials: 'include',
+      body: JSON.stringify({ page: '/ignite' }),
+    })
+      .then((response) => response.json())
+      .then((data: { unique_visitors?: number }) => {
+        if (typeof data.unique_visitors === 'number') setVisitorCount(data.unique_visitors);
+      })
+      .catch(() => undefined);
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
@@ -993,6 +1016,10 @@ const IgnitePage = () => {
         </section>
 
         <Footer />
+
+        <div className="fixed bottom-5 right-5 z-50 rounded-full border border-amber-400/40 bg-slate-900/95 px-4 py-2 text-sm font-semibold text-amber-300 shadow-lg shadow-black/30 backdrop-blur-sm">
+          Visitor count: {visitorCount ?? '...'}
+        </div>
       </div>
     </div>
   );
