@@ -86,12 +86,14 @@ const IgnitePage = () => {
                   Register Your Team
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <button
+                <a
+                  href="/pdfs/Ignite Brochure 2026.pdf"
+                  download
                   className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-all duration-200"
                 >
                   <FileText className="w-4 h-4" />
-                  Download Rulebook
-                </button>
+                  Download Brochure
+                </a>
               </div>
             </div>
           </div>
@@ -133,8 +135,66 @@ const IgnitePage = () => {
           </div>
         </section>
 
+        {/* --- JUDGES PANEL --- */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/70 border-b border-slate-900">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 text-amber-400 mb-4 animate-pulse">
+              <span aria-hidden="true" className="text-lg">⚡</span>
+              <Users className="w-5 h-5" />
+              <span className="text-sm font-semibold uppercase tracking-widest">Judges Panel</span>
+              <span aria-hidden="true" className="text-lg">⚡</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">🏆 Board Announcing Soon 🏆</h2>
+            <p className="text-slate-400 text-base sm:text-lg">Our industry jury will be revealed shortly. Stay tuned! ✨</p>
+          </div>
+        </section>
+
         {/* --- WHY TAKE PART --- */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <style>{`
+            @keyframes ignite-toy-icon {
+              0%, 100% { transform: translateY(10px) scale(.82) rotate(-8deg); opacity: .55; }
+              22% { transform: translateY(-5px) scale(1.12) rotate(8deg); opacity: 1; }
+              42% { transform: translateY(1px) scale(1) rotate(-4deg); opacity: 1; }
+              58% { transform: translateY(-2px) scale(1.04) rotate(2deg); opacity: 1; }
+            }
+            @keyframes ignite-icon-swing {
+              0%, 100% { transform: translateX(-12px) rotate(-12deg) scale(.86); opacity: .6; }
+              35% { transform: translateX(10px) rotate(12deg) scale(1.08); opacity: 1; }
+              55% { transform: translateX(-3px) rotate(-4deg) scale(1); opacity: 1; }
+            }
+            @keyframes ignite-icon-flip {
+              0%, 100% { transform: translateY(8px) rotateY(-75deg) scale(.86); opacity: .55; }
+              35% { transform: translateY(-4px) rotateY(25deg) scale(1.1); opacity: 1; }
+              58% { transform: translateY(0) rotateY(0) scale(1); opacity: 1; }
+            }
+            @keyframes ignite-icon-orbit {
+              0%, 100% { transform: translate(-10px, 8px) rotate(-14deg) scale(.86); opacity: .55; }
+              30% { transform: translate(8px, -6px) rotate(10deg) scale(1.1); opacity: 1; }
+              55% { transform: translate(0, 1px) rotate(-2deg) scale(1); opacity: 1; }
+            }
+            @keyframes ignite-icon-pop {
+              0%, 100% { transform: translateY(10px) scale(.7) rotate(-10deg); opacity: .5; }
+              28% { transform: translateY(-8px) scale(1.2) rotate(8deg); opacity: 1; }
+              48% { transform: translateY(1px) scale(.96) rotate(-3deg); opacity: 1; }
+            }
+            @keyframes ignite-icon-zigzag {
+              0%, 100% { transform: translate(-8px, 8px) rotate(-10deg) scale(.84); opacity: .55; }
+              25% { transform: translate(8px, -5px) rotate(10deg) scale(1.08); opacity: 1; }
+              45% { transform: translate(-5px, -1px) rotate(-7deg) scale(1); opacity: 1; }
+              65% { transform: translate(3px, 1px) rotate(4deg) scale(1.03); opacity: 1; }
+            }
+            .ignite-toy-icon { animation: ignite-toy-icon 3.8s ease-in-out infinite; transform-origin: center bottom; perspective: 500px; }
+            .ignite-feature-card:nth-child(1) .ignite-toy-icon { animation-delay: 0s; }
+            .ignite-feature-card:nth-child(2) .ignite-toy-icon { animation: ignite-icon-swing 3.8s ease-in-out .45s infinite; }
+            .ignite-feature-card:nth-child(3) .ignite-toy-icon { animation: ignite-icon-flip 3.8s ease-in-out .9s infinite; }
+            .ignite-feature-card:nth-child(4) .ignite-toy-icon { animation: ignite-icon-orbit 3.8s ease-in-out 1.35s infinite; }
+            .ignite-feature-card:nth-child(5) .ignite-toy-icon { animation: ignite-icon-pop 3.8s ease-in-out 1.8s infinite; }
+            .ignite-feature-card:nth-child(6) .ignite-toy-icon { animation: ignite-icon-zigzag 3.8s ease-in-out 2.25s infinite; }
+            @media (prefers-reduced-motion: reduce) {
+              .ignite-toy-icon { animation: none; }
+            }
+          `}</style>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Why Take Part</h2>
@@ -176,9 +236,9 @@ const IgnitePage = () => {
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className="rounded-xl border border-slate-800 bg-slate-900/60 p-8 hover:border-amber-500/40 hover:bg-slate-900/90 transition-all duration-300"
+                  className="ignite-feature-card rounded-xl border border-slate-800 bg-slate-900/60 p-8 hover:border-amber-500/40 hover:bg-slate-900/90 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-6 text-amber-400">
+                  <div className="ignite-toy-icon w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-6 text-amber-400">
                     <item.icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-3">{item.title}</h3>
@@ -364,17 +424,17 @@ const IgnitePage = () => {
                 <tbody className="divide-y divide-slate-800">
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Presenting Team — Offline</td>
-                    <td className="py-6 px-6 text-amber-400 font-bold">₹799</td>
+                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹999</td>
                     <td className="py-6 px-6 text-slate-300">Stage slot on 30 September for up to 3 members, executive lunch, high tea, networking access, e-certificates, participation in prizes and internship shortlisting</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Presenting Team — Online</td>
-                    <td className="py-6 px-6 text-amber-400 font-bold">₹499</td>
+                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹499</td>
                     <td className="py-6 px-6 text-slate-300">Virtual presentation slot on 1 October for up to 3 members, e-certificates, participation in prizes and internship shortlisting</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Attendee Pass — Offline</td>
-                    <td className="py-6 px-6 text-amber-400 font-bold">₹599</td>
+                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹599</td>
                     <td className="py-6 px-6 text-slate-300">Full-day access on 30 September as audience, executive lunch, high tea, networking access, e-certificate</td>
                   </tr>
                 </tbody>
@@ -788,7 +848,7 @@ const IgnitePage = () => {
                 <tbody className="divide-y divide-slate-800">
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Offline Presenting Team</td>
-                    <td className="py-6 px-6 text-amber-400 font-bold">₹799 per team</td>
+                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹999 per team</td>
                     <td className="py-6 px-6">
                       <a href="https://rzp.io/rzp/joD2Na9" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center gap-1">
                         Pay Now <ExternalLink className="w-4 h-4" />
@@ -797,7 +857,7 @@ const IgnitePage = () => {
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Online Presenting Team</td>
-                    <td className="py-6 px-6 text-blue-400 font-bold">₹499 per team</td>
+                    <td className="py-6 px-6 text-blue-400 font-extrabold text-lg tracking-wide">₹499 per team</td>
                     <td className="py-6 px-6">
                       <a href="https://rzp.io/rzp/joD2Na9" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-1">
                         Pay Now <ExternalLink className="w-4 h-4" />
@@ -806,7 +866,7 @@ const IgnitePage = () => {
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Offline Attendee Pass</td>
-                    <td className="py-6 px-6 text-green-400 font-bold">₹599 per person</td>
+                    <td className="py-6 px-6 text-green-400 font-extrabold text-lg tracking-wide">₹599 per person</td>
                     <td className="py-6 px-6">
                       <a href="https://rzp.io/rzp/R6SHgE9e" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 font-medium inline-flex items-center gap-1">
                         Pay Now <ExternalLink className="w-4 h-4" />
