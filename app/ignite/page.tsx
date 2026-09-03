@@ -452,7 +452,7 @@ const IgnitePage = () => {
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Presenting Team — Online</td>
-                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹499</td>
+                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹599</td>
                     <td className="py-6 px-6 text-slate-300">Virtual presentation slot on 1 October for up to 3 members, e-certificates, participation in prizes and internship shortlisting</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
@@ -880,7 +880,7 @@ const IgnitePage = () => {
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Online Presenting Team</td>
-                    <td className="py-6 px-6 text-blue-400 font-extrabold text-lg tracking-wide">₹499 per team</td>
+                    <td className="py-6 px-6 text-blue-400 font-extrabold text-lg tracking-wide">₹599 per team</td>
                     <td className="py-6 px-6">
                       <a href="https://rzp.io/rzp/joD2Na9" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-1">
                         Pay Now <ExternalLink className="w-4 h-4" />
