@@ -136,12 +136,18 @@ const ConferencePage = () => {
                 </div>
               </div>
               
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row justify-center gap-3">
                 <button 
                   onClick={() => downloadPDF('Conference brochure 2026.pdf', '/pdfs/Conference brochure 2026.pdf')}
                   className="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all transform hover:scale-105 shadow-lg cursor-pointer"
                 >
                   Download Brochure
+                </button>
+                <button
+                  onClick={() => downloadPDF('Global Conference Proceedings 2026.pdf', '/pdfs/Global Conference Proceedings 2026.pdf')}
+                  className="inline-block bg-white/10 hover:bg-white/20 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all transform hover:scale-105 shadow-lg border border-white/30 cursor-pointer"
+                >
+                  Download Proceedings
                 </button>
               </div>
             </div>
