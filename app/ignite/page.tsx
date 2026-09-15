@@ -92,9 +92,9 @@ const IgnitePage = () => {
               {/* Key Details Strip */}
               <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-6 mb-12 max-w-3xl mx-auto">
                 <p className="text-sm sm:text-base text-slate-300 space-y-2">
-                  <span className="block font-semibold text-amber-300">30 September 2026 — On campus, Olympia Auditorium, Chennai</span>
-                  <span className="block">1 October 2026 — Online</span>
-                  <span className="block text-amber-400 font-semibold">Registrations close 27 September 2026</span>
+                  <span className="block font-semibold text-amber-300">4 December 2026 — On campus, Olympia Auditorium, Chennai</span>
+                  <span className="block">5 December 2026 — Online</span>
+                  <span className="block text-amber-400 font-semibold">Registrations close 1 December 2026</span>
                 </p>
               </div>
 
@@ -289,7 +289,7 @@ const IgnitePage = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">Day 1</h3>
-                    <p className="text-amber-300 font-semibold">Wednesday, 30 September 2026</p>
+                    <p className="text-amber-300 font-semibold">Wednesday, 4 December 2026</p>
                   </div>
                 </div>
 
@@ -326,7 +326,7 @@ const IgnitePage = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">Day 2</h3>
-                    <p className="text-blue-300 font-semibold">Thursday, 1 October 2026</p>
+                    <p className="text-blue-300 font-semibold">Thursday, 5 December 2026</p>
                   </div>
                 </div>
 
@@ -490,22 +490,22 @@ const IgnitePage = () => {
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-4 px-6 text-white font-semibold">Registration Closes</td>
-                    <td className="py-4 px-6 text-amber-300 font-semibold">27 September 2026</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">1 December 2026</td>
                     <td className="py-4 px-6 text-slate-300">No entries accepted after this date</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-4 px-6 text-white font-semibold">Presentation Deck Submission</td>
-                    <td className="py-4 px-6 text-amber-300 font-semibold">28 September 2026</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">2 December 2026</td>
                     <td className="py-4 px-6 text-slate-300">PDF or PPT, emailed to projects@edinztech.com</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-4 px-6 text-white font-semibold">Offline Event</td>
-                    <td className="py-4 px-6 text-amber-300 font-semibold">30 September 2026</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">4 December 2026</td>
                     <td className="py-4 px-6 text-slate-300">Olympia Auditorium, Guindy, Chennai</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-4 px-6 text-white font-semibold">Online Event</td>
-                    <td className="py-4 px-6 text-amber-300 font-semibold">1 October 2026</td>
+                    <td className="py-4 px-6 text-amber-300 font-semibold">5 December 2026</td>
                     <td className="py-4 px-6 text-slate-300">Live on Google Meet</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
@@ -528,7 +528,7 @@ const IgnitePage = () => {
               {/* Day 1 Schedule */}
               <div>
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-amber-300 mb-6">Day 1 — 30 September 2026</h3>
+                  <h3 className="text-2xl font-bold text-amber-300 mb-6">Day 1 — 4 December 2026</h3>
                   <p className="text-slate-400 text-sm mb-6">Olympia Auditorium</p>
                   
                   <div className="space-y-3">
@@ -557,7 +557,7 @@ const IgnitePage = () => {
               {/* Day 2 Schedule */}
               <div>
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-blue-300 mb-6">Day 2 — 1 October 2026</h3>
+                  <h3 className="text-2xl font-bold text-blue-300 mb-6">Day 2 — 5 December 2026</h3>
                   <p className="text-slate-400 text-sm mb-6">Online (Google Meet)</p>
                   
                   <div className="space-y-3">
@@ -648,22 +648,22 @@ const IgnitePage = () => {
                   <tr className="hover:bg-slate-900/30 transition-colors bg-gradient-to-r from-amber-500/10 to-transparent">
                     <td className="py-6 px-6 text-white font-bold">Winner — Offline</td>
                     <td className="py-6 px-6 text-amber-400 font-bold">₹10,000 + Trophy</td>
-                    <td className="py-6 px-6 text-slate-300">30 September 2026</td>
+                    <td className="py-6 px-6 text-slate-300">4 December 2026</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Runner-up — Offline</td>
                     <td className="py-6 px-6 text-amber-400 font-bold">₹5,000</td>
-                    <td className="py-6 px-6 text-slate-300">30 September 2026</td>
+                    <td className="py-6 px-6 text-slate-300">4 December 2026</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors bg-gradient-to-r from-blue-500/10 to-transparent">
                     <td className="py-6 px-6 text-white font-bold">Winner — Online</td>
                     <td className="py-6 px-6 text-blue-400 font-bold">₹10,000 + Trophy</td>
-                    <td className="py-6 px-6 text-slate-300">1 October 2026</td>
+                    <td className="py-6 px-6 text-slate-300">5 December 2026</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Runner-up — Online</td>
                     <td className="py-6 px-6 text-blue-400 font-bold">₹5,000</td>
-                    <td className="py-6 px-6 text-slate-300">1 October 2026</td>
+                    <td className="py-6 px-6 text-slate-300">5 December 2026</td>
                   </tr>
                 </tbody>
               </table>
@@ -907,7 +907,7 @@ const IgnitePage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/5 border border-amber-500/30 rounded-2xl p-10 sm:p-14 mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center">
-                Registrations close on 27 September 2026
+                Registrations close on 1 December 2026
               </h2>
               <p className="text-xl text-amber-300 font-semibold text-center mb-8">
                 Three teams per college. Seven minutes each. Make them count.
