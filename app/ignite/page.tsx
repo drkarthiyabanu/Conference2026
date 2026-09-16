@@ -289,7 +289,7 @@ const IgnitePage = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">Day 1</h3>
-                    <p className="text-amber-300 font-semibold">Wednesday, 4 December 2026</p>
+                    <p className="text-amber-300 font-semibold">Friday, 4 December 2026</p>
                   </div>
                 </div>
 
@@ -326,7 +326,7 @@ const IgnitePage = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">Day 2</h3>
-                    <p className="text-blue-300 font-semibold">Thursday, 5 December 2026</p>
+                    <p className="text-blue-300 font-semibold">Saturday, 5 December 2026</p>
                   </div>
                 </div>
 
