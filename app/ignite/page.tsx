@@ -948,11 +948,11 @@ const IgnitePage = () => {
                     <div>
                       <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Phone</p>
                       <div className="flex items-center gap-3 mt-1">
-                        <a href="tel:+919360505768" className="text-white hover:text-amber-300 transition-colors">
+                        <a href="tel:+919360505768" className="text-base font-semibold tracking-wide text-white hover:text-amber-300 transition-colors">
                           +91 93605 05768
                         </a>
                         <span className="text-slate-600">•</span>
-                        <a href="tel:+918667493679" className="text-white hover:text-amber-300 transition-colors">
+                        <a href="tel:+918667493679" className="text-base font-semibold tracking-wide text-white hover:text-amber-300 transition-colors">
                           +91 86674 93679
                         </a>
                       </div>
@@ -1006,7 +1006,8 @@ const IgnitePage = () => {
                       • Inspire Softech Solutions<br/>
                       • Edinz Tech Private Limited<br/>
                       • Adore Technology Solutions<br/>
-                      • iGreen StarTech Solutions
+                      • iGreen StarTech Solutions<br/>
+                      • Anovelyx Technologies
                     </p>
                   </div>
                 </div>
