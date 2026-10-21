@@ -947,12 +947,11 @@ const IgnitePage = () => {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Phone</p>
-                      <div className="flex items-center gap-3 mt-1">
-                        <a href="tel:+919360505768" className="text-base font-semibold tracking-wide text-white hover:text-amber-300 transition-colors">
+                      <div className="flex flex-col items-start gap-1 mt-1">
+                        <a href="tel:+919360505768" className="text-base font-medium leading-6 text-white hover:text-amber-300 transition-colors">
                           +91 93605 05768
                         </a>
-                        <span className="text-slate-600">•</span>
-                        <a href="tel:+918667493679" className="text-base font-semibold tracking-wide text-white hover:text-amber-300 transition-colors">
+                        <a href="tel:+918667493679" className="text-base font-medium leading-6 text-white hover:text-amber-300 transition-colors">
                           +91 86674 93679
                         </a>
                       </div>
