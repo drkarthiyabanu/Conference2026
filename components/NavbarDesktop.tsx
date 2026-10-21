@@ -161,9 +161,9 @@ const NavbarDesktop: React.FC<Props> = ({ links }) => {
     return (
         <nav
             ref={navRef}
-                className={` rounded-4xl md:flex items-center justify-between bg-gray-900 px-6 py-4 shadow-md sticky top-0 z-50 transition-all duration-500 ${scrolled
-                ? "bg-gray-900/70 backdrop-blur-sm shadow-xl scale-[0.85] w-[85vw] hover:scale-[0.9]" // Increased to 85% width
-                : "bg-gray-900 w-full" // Increased to full width (optional)
+                className={` rounded-4xl md:flex gap-6 max-w-7xl w-[calc(100%-2rem)] items-center justify-between bg-gray-900 px-6 py-4 shadow-md sticky top-0 z-50 transition-all duration-500 ${scrolled
+                ? "bg-gray-900/70 backdrop-blur-sm shadow-xl"
+                : "bg-gray-900"
                 }`}
         >
             {/* Logo */}
@@ -185,7 +185,7 @@ const NavbarDesktop: React.FC<Props> = ({ links }) => {
             </div> */}
 
             {/* Links */}
-            <ul ref={linksRef} className="flex space-x-8 text-white">
+            <ul ref={linksRef} className="flex gap-4 text-white whitespace-nowrap">
                 {links.map((link) => (
                     <li
                         key={link.label}
@@ -217,7 +217,7 @@ const NavbarDesktop: React.FC<Props> = ({ links }) => {
                 <button
                     ref={buttonRef}
                     onClick={handleButtonClick}
-                    className="relative bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-2 rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-amber-500/25 active:scale-95 group overflow-hidden"
+                    className="relative bg-amber-500 hover:bg-amber-600 text-white font-semibold whitespace-nowrap px-6 py-2 rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-amber-500/25 active:scale-95 group overflow-hidden"
                 >
                     <span className="relative z-10">Get Started</span>
                     {/* Shine effect */}

@@ -1,0 +1,182 @@
+/* Keep layout safeguards local to Ignite, including its shared header/footer. */
+.page {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.page,
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.page :where(:global(.grid), :global(.flex), :global(.inline-flex)) > * {
+  min-width: 0;
+}
+
+.page svg {
+  flex-shrink: 0;
+}
+
+.page section > div {
+  width: 100%;
+}
+
+.page h1 {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+}
+
+.page h2 {
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+}
+
+.page a[href^='tel:'] {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.page a[href^='mailto:'],
+.page a[href^='https:'] {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Tables retain their relationships; only these components may scroll. */
+.page :global(.overflow-x-auto) {
+  scrollbar-width: thin;
+}
+
+.page :global(.overflow-x-auto)::-webkit-scrollbar {
+  display: block;
+  height: 0.5rem;
+}
+
+.page :global(.overflow-x-auto)::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 1rem;
+}
+
+.page table {
+  min-width: 36rem;
+}
+
+.schedule,
+.contactGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.scheduleDay,
+.scheduleList {
+  display: grid;
+  min-width: 0;
+  gap: 0.75rem;
+}
+
+.scheduleDay {
+  align-content: start;
+}
+
+.scheduleDay > h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+.scheduleDay > p {
+  margin: 0 0 0.75rem;
+}
+
+.scheduleCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 0.5rem 1rem;
+  min-width: 0;
+}
+
+.scheduleTime {
+  display: flex;
+  align-items: center;
+  align-self: start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.scheduleCard > p {
+  line-height: 1.5rem;
+}
+
+.contactGrid > div {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.contactGrid a {
+  display: inline-block;
+}
+
+@media (min-width: 40rem) {
+  .scheduleCard {
+    grid-template-columns: 9rem minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .schedule,
+  .contactGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Both days share row tracks so wrapped sessions keep matching cards aligned. */
+  .schedule {
+    grid-template-rows: auto auto repeat(8, minmax(5.5rem, auto));
+    column-gap: 2rem;
+    row-gap: 0.75rem;
+  }
+
+  .scheduleDay {
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
+  }
+
+  .scheduleDay:first-child {
+    grid-column: 1;
+  }
+
+  .scheduleDay:last-child {
+    grid-column: 2;
+  }
+
+  .scheduleList {
+    grid-row: 3 / -1;
+    grid-template-rows: subgrid;
+  }
+}
+
+/* Reserve space for currency amounts instead of letting description text squeeze them. */
+.page .feeTable {
+  min-width: 48rem;
+  table-layout: auto;
+}
+
+.feeTable :is(th, td) {
+  vertical-align: top;
+}
+
+.feeTable :is(th, td):first-child {
+  width: 15rem;
+}
+
+.feeTable :is(th, td):nth-child(2) {
+  width: 13rem;
+  min-width: 13rem;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
