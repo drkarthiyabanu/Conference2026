@@ -87,7 +87,7 @@ const NavbarMobile: React.FC<Props> = ({ links }) => {
     return (
         <nav
             ref={navRef}
-            className={`md:hidden rounded-4xl px-2 py-3 sticky top-0 z-50 transition-all duration-500 transform-gpu
+            className={`xl:hidden rounded-4xl px-2 py-3 sticky top-0 z-50 transition-all duration-500 transform-gpu
                 ${scrolled
                     ? "bg-gray-900/78 backdrop-blur-[6px] shadow-xl scale-80"
                     : "bg-gray-900 backdrop-blur-lg shadow-md scale-100 w-screen rounded-none"

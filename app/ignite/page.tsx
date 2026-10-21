@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import styles from './ignite.module.css';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.adoretech.cloud';
 
@@ -58,7 +59,7 @@ const IgnitePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+    <div className={`${styles.page} min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200`}>
       {/* Background Architectural Mesh & Subtle Lighting */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(245,158,11,0.12),rgba(255,255,255,0))]" />
@@ -69,7 +70,7 @@ const IgnitePage = () => {
         <Navbar />
 
         {/* --- HERO SECTION --- */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
@@ -259,7 +260,7 @@ const IgnitePage = () => {
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className="ignite-feature-card rounded-xl border border-slate-800 bg-slate-900/60 p-8 hover:border-amber-500/40 hover:bg-slate-900/90 transition-all duration-300"
+                  className="ignite-feature-card rounded-xl border border-slate-800 bg-slate-900/60 p-5 sm:p-8 hover:border-amber-500/40 hover:bg-slate-900/90 transition-all duration-300"
                 >
                   <div className="ignite-toy-icon w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-6 text-amber-400">
                     <item.icon className="w-6 h-6" />
@@ -436,7 +437,7 @@ const IgnitePage = () => {
             <p className="text-center text-slate-400 mb-12 text-base">Presenting fees are per team, not per member — one fee covers up to three members. All fees are inclusive of applicable taxes and are non-refundable once registration is confirmed.</p>
 
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className={`${styles.feeTable} w-full text-sm`}>
                 <thead>
                   <tr className="border-b border-slate-800">
                     <th className="text-left py-4 px-6 font-semibold text-amber-400">Category</th>
@@ -447,17 +448,17 @@ const IgnitePage = () => {
                 <tbody className="divide-y divide-slate-800">
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Presenting Team — Offline</td>
-                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹999</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold text-lg tabular-nums">₹999</td>
                     <td className="py-6 px-6 text-slate-300">Stage slot on 30 September for up to 3 members, executive lunch, high tea, networking access, e-certificates, participation in prizes and internship shortlisting</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Presenting Team — Online</td>
-                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹599</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold text-lg tabular-nums">₹599</td>
                     <td className="py-6 px-6 text-slate-300">Virtual presentation slot on 1 October for up to 3 members, e-certificates, participation in prizes and internship shortlisting</td>
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Attendee Pass — Offline</td>
-                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹599</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold text-lg tabular-nums">₹599</td>
                     <td className="py-6 px-6 text-slate-300">Full-day access on 30 September as audience, executive lunch, high tea, networking access, e-certificate</td>
                   </tr>
                 </tbody>
@@ -524,66 +525,62 @@ const IgnitePage = () => {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Event Schedule</h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className={styles.schedule}>
               {/* Day 1 Schedule */}
-              <div>
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-amber-300 mb-6">Day 1 — 4 December 2026</h3>
-                  <p className="text-slate-400 text-sm mb-6">Olympia Auditorium</p>
-                  
-                  <div className="space-y-3">
-                    {[
-                      { time: "08:30 – 09:30", session: "Registration, check-in and team briefing" },
-                      { time: "09:30 – 10:00", session: "Inauguration and opening address" },
-                      { time: "10:00 – 13:00", session: "Team presentations — Round 1" },
-                      { time: "13:00 – 14:00", session: "Executive lunch" },
-                      { time: "14:00 – 16:00", session: "Team presentations — Round 2" },
-                      { time: "16:00 – 16:45", session: "High tea and networking" },
-                      { time: "16:45 – 17:15", session: "Jury deliberation · Industry address" },
-                      { time: "17:15 – 18:00", session: "Results, prize distribution and valedictory" }
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex gap-4 p-4 rounded-lg border border-slate-800 hover:border-amber-500/30 transition-colors">
-                        <div className="flex items-center gap-2 text-amber-400 font-semibold text-sm min-w-fit">
-                          <Clock className="w-4 h-4" />
-                          {item.time}
-                        </div>
-                        <p className="text-slate-300 text-sm">{item.session}</p>
+              <div className={styles.scheduleDay}>
+                <h3 className="text-2xl font-bold text-amber-300 mb-6">Day 1 — 4 December 2026</h3>
+                <p className="text-slate-400 text-sm mb-6">Olympia Auditorium</p>
+
+                <div className={styles.scheduleList}>
+                  {[
+                    { time: "08:30 – 09:30", session: "Registration, check-in and team briefing" },
+                    { time: "09:30 – 10:00", session: "Inauguration and opening address" },
+                    { time: "10:00 – 13:00", session: "Team presentations — Round 1" },
+                    { time: "13:00 – 14:00", session: "Executive lunch" },
+                    { time: "14:00 – 16:00", session: "Team presentations — Round 2" },
+                    { time: "16:00 – 16:45", session: "High tea and networking" },
+                    { time: "16:45 – 17:15", session: "Jury deliberation · Industry address" },
+                    { time: "17:15 – 18:00", session: "Results, prize distribution and valedictory" }
+                  ].map((item, idx) => (
+                    <div key={idx} className={`${styles.scheduleCard} p-4 rounded-lg border border-slate-800 hover:border-amber-500/30 transition-colors`}>
+                      <div className={`${styles.scheduleTime} text-amber-400`}>
+                        <Clock className="w-4 h-4" />
+                        {item.time}
                       </div>
-                    ))}
-                  </div>
+                      <p className="text-slate-300 text-sm">{item.session}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               {/* Day 2 Schedule */}
-              <div>
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-blue-300 mb-6">Day 2 — 5 December 2026</h3>
-                  <p className="text-slate-400 text-sm mb-6">Online (Google Meet)</p>
-                  
-                  <div className="space-y-3">
-                    {[
-                      { time: "09:30 – 10:00", session: "Virtual lobby opens, technical check for all teams" },
-                      { time: "10:00 – 13:00", session: "Online presentations — Round 1" },
-                      { time: "14:00 – 16:00", session: "Online presentations — Round 2" },
-                      { time: "16:00 – 16:45", session: "Jury feedback session" },
-                      { time: "17:00", session: "Results announced" }
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex gap-4 p-4 rounded-lg border border-slate-800 hover:border-blue-500/30 transition-colors">
-                        <div className="flex items-center gap-2 text-blue-400 font-semibold text-sm min-w-fit">
-                          <Clock className="w-4 h-4" />
-                          {item.time}
-                        </div>
-                        <p className="text-slate-300 text-sm">{item.session}</p>
+              <div className={styles.scheduleDay}>
+                <h3 className="text-2xl font-bold text-blue-300 mb-6">Day 2 — 5 December 2026</h3>
+                <p className="text-slate-400 text-sm mb-6">Online (Google Meet)</p>
+
+                <div className={styles.scheduleList}>
+                  {[
+                    { time: "09:30 – 10:00", session: "Virtual lobby opens, technical check for all teams" },
+                    { time: "10:00 – 13:00", session: "Online presentations — Round 1" },
+                    { time: "14:00 – 16:00", session: "Online presentations — Round 2" },
+                    { time: "16:00 – 16:45", session: "Jury feedback session" },
+                    { time: "17:00", session: "Results announced" }
+                  ].map((item, idx) => (
+                    <div key={idx} className={`${styles.scheduleCard} p-4 rounded-lg border border-slate-800 hover:border-blue-500/30 transition-colors`}>
+                      <div className={`${styles.scheduleTime} text-blue-400`}>
+                        <Clock className="w-4 h-4" />
+                        {item.time}
                       </div>
-                    ))}
-                  </div>
+                      <p className="text-slate-300 text-sm">{item.session}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* --- JUDGING CRITERIA --- */}
+{/* --- JUDGING CRITERIA --- */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center">Judging Criteria</h2>
@@ -713,7 +710,7 @@ const IgnitePage = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Venue</h2>
 
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-10">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:p-8 lg:p-10">
               <h3 className="text-2xl font-bold text-amber-300 mb-4">Olympia Auditorium</h3>
               <p className="text-white font-semibold mb-6">Olympia Technology Park, Guindy, Chennai 600 032</p>
               
@@ -820,7 +817,7 @@ const IgnitePage = () => {
                 <div key={idx}>
                   <button
                     onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
-                    className="w-full text-left p-6 bg-slate-900/60 border border-slate-800 rounded-lg hover:border-amber-500/30 hover:bg-slate-900/90 transition-all duration-200 flex items-center justify-between"
+                    className="w-full text-left p-6 bg-slate-900/60 border border-slate-800 rounded-lg hover:border-amber-500/30 hover:bg-slate-900/90 transition-all duration-200 flex items-center justify-between gap-4"
                   >
                     <h4 className="font-semibold text-white text-base">{faq.q}</h4>
                     <ChevronDown className={`w-5 h-5 text-amber-400 transition-transform ${expandedFAQ === idx ? 'rotate-180' : ''}`} />
@@ -860,7 +857,7 @@ const IgnitePage = () => {
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className={`${styles.feeTable} w-full text-sm`}>
                 <thead>
                   <tr className="border-b border-slate-800">
                     <th className="text-left py-4 px-6 font-semibold text-amber-400">Category</th>
@@ -871,7 +868,7 @@ const IgnitePage = () => {
                 <tbody className="divide-y divide-slate-800">
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Offline Presenting Team</td>
-                    <td className="py-6 px-6 text-amber-400 font-extrabold text-lg tracking-wide">₹999 per team</td>
+                    <td className="py-6 px-6 text-amber-400 font-bold text-lg tabular-nums">₹999 per team</td>
                     <td className="py-6 px-6">
                       <a href="https://rzp.io/rzp/joD2Na9" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center gap-1">
                         Pay Now <ExternalLink className="w-4 h-4" />
@@ -880,7 +877,7 @@ const IgnitePage = () => {
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Online Presenting Team</td>
-                    <td className="py-6 px-6 text-blue-400 font-extrabold text-lg tracking-wide">₹599 per team</td>
+                    <td className="py-6 px-6 text-blue-400 font-bold text-lg tabular-nums">₹599 per team</td>
                     <td className="py-6 px-6">
                       <a href="https://rzp.io/rzp/joD2Na9" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-1">
                         Pay Now <ExternalLink className="w-4 h-4" />
@@ -889,7 +886,7 @@ const IgnitePage = () => {
                   </tr>
                   <tr className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-6 px-6 text-white font-semibold">Offline Attendee Pass</td>
-                    <td className="py-6 px-6 text-green-400 font-extrabold text-lg tracking-wide">₹599 per person</td>
+                    <td className="py-6 px-6 text-green-400 font-bold text-lg tabular-nums">₹599 per person</td>
                     <td className="py-6 px-6">
                       <a href="https://rzp.io/rzp/R6SHgE9e" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 font-medium inline-flex items-center gap-1">
                         Pay Now <ExternalLink className="w-4 h-4" />
@@ -905,7 +902,7 @@ const IgnitePage = () => {
         {/* --- CONTACT & CLOSING CALL TO ACTION --- */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-900">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/5 border border-amber-500/30 rounded-2xl p-10 sm:p-14 mb-16">
+            <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/5 border border-amber-500/30 rounded-2xl p-5 sm:p-10 lg:p-14 mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center">
                 Registrations close on 1 December 2026
               </h2>
@@ -925,9 +922,9 @@ const IgnitePage = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div className={styles.contactGrid}>
               {/* Contact Info */}
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-10">
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60">
                 <h3 className="text-2xl font-bold text-white mb-8">Contact Us</h3>
                 
                 <div className="space-y-6">
@@ -985,7 +982,7 @@ const IgnitePage = () => {
               </div>
 
               {/* Organization Info */}
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-10">
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60">
                 <h3 className="text-2xl font-bold text-white mb-8">Inspire Softech Group</h3>
                 
                 <p className="text-slate-300 text-base leading-relaxed mb-8">
