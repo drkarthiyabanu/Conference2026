@@ -61,6 +61,7 @@ const IgnitePage = () => {
 
   return (
     <>
+      <Navbar />
       <main className={styles.postponementNotice}>
         <Image
           src="/images/ignite-postponed.jpeg"
