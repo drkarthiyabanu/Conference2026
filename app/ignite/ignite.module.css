@@ -1,4 +1,19 @@
 /* Keep layout safeguards local to Ignite, including its shared header/footer. */
+.postponementNotice {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  background: #fff;
+}
+
+.postponementImage {
+  width: auto;
+  height: auto;
+  max-width: 100vw;
+  max-height: 100dvh;
+  object-fit: contain;
+}
+
 .page {
   min-width: 0;
   overflow-wrap: break-word;
