@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import {
   Award,
   Users,
@@ -59,6 +60,18 @@ const IgnitePage = () => {
   }, []);
 
   return (
+    <>
+      <main className={styles.postponementNotice}>
+        <Image
+          src="/images/ignite-postponed.jpeg"
+          alt="Important announcement: INSPIRE IGNITE is postponed to February 2027."
+          width={1254}
+          height={1254}
+          preload
+          className={styles.postponementImage}
+        />
+      </main>
+      <div hidden>
     <div className={`${styles.page} min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200`}>
       {/* Background Architectural Mesh & Subtle Lighting */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -1019,6 +1032,8 @@ const IgnitePage = () => {
         </div>
       </div>
     </div>
+      </div>
+    </>
   );
 };
 
