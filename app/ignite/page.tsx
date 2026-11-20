@@ -80,8 +80,6 @@ const IgnitePage = () => {
       </div>
 
       <div className="relative z-10">
-        <Navbar />
-
         {/* --- HERO SECTION --- */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
